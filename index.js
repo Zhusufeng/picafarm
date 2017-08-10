@@ -18,7 +18,8 @@ const massive = require('massive'); //Postgres SQL tool
 
 //===INITIALIZE EXPRESS APP===================
 const app = module.exports = express();
-const port = 8080;
+const port = process.env.PORT || 8080;
+
 
 
 // =========Public root web Middleware======== //
