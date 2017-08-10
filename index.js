@@ -53,7 +53,14 @@ app.use(express.static(__dirname + '/public'));
 // =========SQL database======== //
 
 // End Points ======================
-// app.get('/api/quotes', quotes.getQuotes);
+// app.get('/api', (req, res, next) => {
+//   res.sendFile('public/index.html');
+
+// });
+
+app.get('/api', function (req, res) {
+    res.sendFile('public/index.html', { root: __dirname });
+});
 // app.post('/api/quotes/save', quotes.saveQuotes);
 // app.get('/api/bibleQuotes', quotes.getBibleQuotes);
 
