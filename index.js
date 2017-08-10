@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const path = require('path');
 
 //CROSS SITE SCRIPTING
 const cors = require('cors');
@@ -20,11 +21,12 @@ const massive = require('massive'); //Postgres SQL tool
 const app = module.exports = express();
 const port = process.env.PORT || 8080;
 
+const public = path.join(__dirname + '/public/');
 
 
 // =========Public root web Middleware======== //
 app.use(bodyParser.json());
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(public));
 // =========Public root web Middleware======== //
 
 // =========SQL database======== //
@@ -58,8 +60,9 @@ app.use(express.static(__dirname + '/public'));
 
 // });
 
-app.get('/api', function (req, res) {
-    res.sendFile('public/index.html', { root: __dirname });
+app.get('/', function (req, res) {
+    // res.sendFile('index.html');
+    res.sendFile(path.join(__dirname, '/public/', 'index.html'));
 });
 // app.post('/api/quotes/save', quotes.saveQuotes);
 // app.get('/api/bibleQuotes', quotes.getBibleQuotes);
