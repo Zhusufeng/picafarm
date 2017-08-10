@@ -27,13 +27,13 @@ app.use(express.static(__dirname + '/public'));
 // =========Public root web Middleware======== //
 
 // =========SQL database======== //
-var conn = massive.connectSync({
-  connectionString: process.env.connectionString
-});
+// var conn = massive.connectSync({
+//   connectionString: process.env.connectionString
+// });
 
-//setting database connection.
-app.set('db', conn);
-const db = app.get('db');
+// //setting database connection.
+// app.set('db', conn);
+// const db = app.get('db');
 
 //Custom Scripts =========================
 // const quotes = require('./server/quoteCtrl.js');
