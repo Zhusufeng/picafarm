@@ -36,17 +36,17 @@ app.set('db', conn);
 const db = app.get('db');
 
 //Custom Scripts =========================
-const quotes = require('./server/quoteCtrl.js');
+//const quotes = require('./server/quoteCtrl.js');
 
 
 // If database table is not found create.
-db.table_check((err, response) => {
-  if (response) {
-    console.log('Table not exist. Creating new.')
-  } else {
-    console.log(err);
-  }
-});
+// db.table_check((err, response) => {
+//   if (response) {
+//     console.log('Table not exist. Creating new.')
+//   } else {
+//     console.log(err);
+//   }
+// });
 
 
 // =========SQL database======== //
