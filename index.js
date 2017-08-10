@@ -8,7 +8,7 @@ const cors = require('cors');
 const session = require('express-session');
 
 //Secrets.
-const config = require('./config.js');
+// const config = require('./config.js');
 
 //secrete session code file. --- later for individual accounts save.
 // const config = require('./config.js');
@@ -28,7 +28,7 @@ app.use(express.static(__dirname + '/public'));
 
 // =========SQL database======== //
 var conn = massive.connectSync({
-  connectionString: config.connectionString
+  connectionString: process.env.connectionString
 });
 
 //setting database connection.
