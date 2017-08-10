@@ -39,7 +39,7 @@ app.use(express.static(public));
 // const db = app.get('db');
 
 //Custom Scripts =========================
-// const quotes = require('./server/quoteCtrl.js');
+//const quotes = require('./server/quoteCtrl.js');
 
 
 // If database table is not found create.
