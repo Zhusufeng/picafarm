@@ -30,41 +30,34 @@ app.use(express.static(public));
 // =========Public root web Middleware======== //
 
 // =========SQL database======== //
-// var conn = massive.connectSync({
-//   connectionString: process.env.connectionString
-// });
+var conn = massive.connectSync({
+  connectionString: process.env.DATABASE_URL
+});
 
 // //setting database connection.
-// app.set('db', conn);
-// const db = app.get('db');
+app.set('db', conn);
+const db = app.get('db');
 
 //Custom Scripts =========================
-// const quotes = require('./server/quoteCtrl.js');
+const user = require('./server/userCtrl.js');
 
 
 // If database table is not found create.
-// db.table_check((err, response) => {
-//   if (response) {
-//     console.log('Table not exist. Creating new.')
-//   } else {
-//     console.log(err);
-//   }
-// });
+db.table_check((err, response) => {
+  if (response) {
+    console.log('Table not exist. Creating new.');
+  } else {
+    console.log(err);
+  }
+});
 
 
 // =========SQL database======== //
 
 // End Points ======================
-// app.get('/api', (req, res, next) => {
-//   res.sendFile('public/index.html');
+app.post('/user/signup', user.makeUser);
+// app.get('/user/login', user.makeUser);
 
-// });
-
-app.get('/api', function (req, res) {
-    // res.sendFile('index.html');
-    console.log('Function is run');
-    res.sendFile(path.join(__dirname, '/public/', 'index.html'));
-});
 // app.post('/api/quotes/save', quotes.saveQuotes);
 // app.get('/api/bibleQuotes', quotes.getBibleQuotes);
 
