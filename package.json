@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "We are the farmerrrrr.",
   "main": "index.js",
+  "engines": {
+    "node": ">=4.0.0"
+  },
   "dependencies": {
     "babel-preset-es2015": "^6.24.1",
     "bcryptjs": "^2.4.3",
@@ -26,10 +29,12 @@
     "massive": "^2.6.1",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
+    "path": "^0.12.7",
     "secret": "^1.0.2"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",

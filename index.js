@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const path = require('path');
 
 //CROSS SITE SCRIPTING
 const cors = require('cors');
@@ -8,7 +9,7 @@ const cors = require('cors');
 const session = require('express-session');
 
 //Secrets.
-const config = require('./config.js');
+// const config = require('./config.js');
 
 //secrete session code file. --- later for individual accounts save.
 // const config = require('./config.js');
@@ -18,22 +19,24 @@ const massive = require('massive'); //Postgres SQL tool
 
 //===INITIALIZE EXPRESS APP===================
 const app = module.exports = express();
-const port = 8080;
+const port = process.env.PORT || 8080;
+
+const public = path.join(__dirname + '/public/');
 
 
 // =========Public root web Middleware======== //
 app.use(bodyParser.json());
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(public));
 // =========Public root web Middleware======== //
 
 // =========SQL database======== //
-var conn = massive.connectSync({
-  connectionString: config.connectionString
-});
+// var conn = massive.connectSync({
+//   connectionString: process.env.connectionString
+// });
 
-//setting database connection.
-app.set('db', conn);
-const db = app.get('db');
+// //setting database connection.
+// app.set('db', conn);
+// const db = app.get('db');
 
 //Custom Scripts =========================
 // const quotes = require('./server/quoteCtrl.js');
@@ -52,7 +55,16 @@ const db = app.get('db');
 // =========SQL database======== //
 
 // End Points ======================
-// app.get('/api/quotes', quotes.getQuotes);
+// app.get('/api', (req, res, next) => {
+//   res.sendFile('public/index.html');
+
+// });
+
+app.get('/api', function (req, res) {
+    // res.sendFile('index.html');
+    console.log('Function is run');
+    res.sendFile(path.join(__dirname, '/public/', 'index.html'));
+});
 // app.post('/api/quotes/save', quotes.saveQuotes);
 // app.get('/api/bibleQuotes', quotes.getBibleQuotes);
 
