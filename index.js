@@ -41,7 +41,6 @@ app.use(express.static(public));
 //Custom Scripts =========================
 //const quotes = require('./server/quoteCtrl.js');
 
-
 // If database table is not found create.
 // db.table_check((err, response) => {
 //   if (response) {
