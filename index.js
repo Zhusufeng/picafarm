@@ -60,7 +60,7 @@ app.use(express.static(public));
 
 // });
 
-app.get('/api', function (req, res) {
+app.get('/', function (req, res) {
     // res.sendFile('index.html');
     console.log('Function is run');
     res.sendFile(path.join(__dirname, '/public/', 'index.html'));
