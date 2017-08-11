@@ -60,8 +60,9 @@ app.use(express.static(public));
 
 // });
 
-app.get('/', function (req, res) {
+app.get('/api', function (req, res) {
     // res.sendFile('index.html');
+    console.log('Function is run');
     res.sendFile(path.join(__dirname, '/public/', 'index.html'));
 });
 // app.post('/api/quotes/save', quotes.saveQuotes);
