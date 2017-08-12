@@ -40,7 +40,7 @@ const db = app.get('db');
 
 //Custom Scripts =========================
 const user = require('./server/userCtrl.js');
-
+const searchFarm = require('./server/farmerCtrl.js');
 
 // If database table is not found create.
 db.table_check((err, response) => {
@@ -55,6 +55,7 @@ db.table_check((err, response) => {
 // =========SQL database======== //
 
 // End Points ======================
+app.get('/search', searchFarm.searchFarm);
 app.post('/user/signup', user.makeUser);
 // app.get('/user/login', user.makeUser);
 
