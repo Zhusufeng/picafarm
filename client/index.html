@@ -35,14 +35,14 @@
         <!--Text-->
         <h1>Hello World Something Else!</h1>
 
-        <farmer-page ng-if="clicked"></farmer-page>
+        <farmer-page ng-show="farmer"></farmer-page>
 
         <div ng-controller = "mainCtrl">
           <table>
             <tbody>
               <tr ng-repeat = "farm in farmerArr">
                   <td>
-                      <input type="checkbox" ng-model="clicked" ng-init="clicked = true">  {{farm.title}}  </input> <br>
+                    <a href ng-click="farmer=!farmer"  {{farm.title}} /> <br>
                     {{farm.price}} <br>
                     {{farm.description}} <br>
                     {{farm.produce}} <br>
