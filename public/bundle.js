@@ -8,7 +8,7 @@ angular.module('picafarm').controller('mainCtrl', ["$scope", "$http", function (
 
   $scope.farmers = {};
   $scope.farmerArr = [];
-
+  $scope.get();
   $scope.get = function () {
     $http.get("/search").then(function (response) {
       farmerArr.push(response.data);
