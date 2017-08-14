@@ -36,26 +36,40 @@
         <h1>Hello World Something Else!</h1>
         
         <div ng-controller = "mainCtrl">
+          <table>
+            <tbody>
+              <tr ng-repeat = "farm in farmerArr">
+                <td>
+                  <tr>
+                    {{farm.title}}
+                  </tr>
+                  <tr>
+                    {{farm.price}}
+                  </tr>
+                  <tr>
+                    {{farm.description}}
+                  </tr>
+                  <tr>
+                    {{farm.produce}}
+                  </tr>
+                  <tr>
+                    {{farm.curr_subscribers}} / {{farm.max_subscribers}}
+                  </tr>                
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
           <ul >
             <li ng-repeat = "farm in farmerArr">
               <!-- {{farm}} -->
               Farm Title: {{farm.title}}
             </li>
-            <li>{{farmerArr}}</li>
-            <!-- <li>Hello, from li! {{farm.title}}</li> -->
           </ul> 
           <p>1. {{main.tester}}</p>
           <p>2. {{tester}}</p>
           <p>ARRAY: {{farmerArr}}</p>
           <p>3. {{$ctrl.tester}}</p>
-        </div>
-        <!-- <ul ng-controller = "mainCtrl" ng-repeat = "farm in farmerArr">
-          <li> this is farm {{farm}} </li>
-          <li> this is farm array {{farmArr}} </li>
-          <li> testing mainController {{tester}} </li>
-          <li> this is farm a title {{farm.title}} </li>
-        </ul> -->
-
 
       </div>
     </div>
