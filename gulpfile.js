@@ -77,19 +77,19 @@ gulp.task('js', function () {
 
 //this task will compress all of your views but will not compile them into one.
 gulp.task('views', function () {
-    gulp.src(paths.viewsSource)
+    return gulp.src(paths.viewsSource)
         .pipe(gulp.dest("./public/views"));
 });
 
 //This task makes a copy of your index.html and compresses it and moves it to the dist folder
 gulp.task('index', function () {
-    gulp.src(paths.indexSource)
+    return gulp.src(paths.indexSource)
         .pipe(gulp.dest("./public"));
 });
 
 //this task copies all your pictures over to the dist folder.
 gulp.task('pictures', function () {
-    gulp.src(paths.picturesSource)
+    return gulp.src(paths.picturesSource)
         .pipe(gulp.dest("./public/pictures"));
 });
 
