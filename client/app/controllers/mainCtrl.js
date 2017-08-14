@@ -4,7 +4,6 @@ angular.module('picafarm').controller('mainCtrl', function($scope, $http) {
   $scope.farmerArr = [];
   $scope.tester = '!!! test !!!';
 
-  $scope.selectedFarm2 = selectedFarm;
 
   $scope.get = function() {
     $http.get("/search").then(function(response) {

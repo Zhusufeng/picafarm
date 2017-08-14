@@ -25,8 +25,6 @@ angular.module('picafarm').controller('mainCtrl', ["$scope", "$http", function (
   $scope.farmerArr = [];
   $scope.tester = '!!! test !!!';
 
-  $scope.selectedFarm2 = selectedFarm;
-
   $scope.get = function () {
     $http.get("/search").then(function (response) {
       console.log(response.data);
