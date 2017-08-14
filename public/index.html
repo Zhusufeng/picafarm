@@ -35,16 +35,17 @@
         <!--Text-->
         <h1>Hello World Something Else!</h1>
         
-        <div ng-controller = "mainCtrl as main">
+        <div ng-controller = "mainCtrl">
           <ul >
-            <li ng-repeat = "farm in $ctrl.farmerArr">
+            <li ng-repeat = "farm in farmerArr">
               {{farm}}
             </li>
+            <li>{{farmerArr}}</li>
             <li>Hello, from li! {{farm.title}}</li>
-            <li>{{main.tester}}</li>  
           </ul> 
           <p>1. {{main.tester}}</p>
           <p>2. {{tester}}</p>
+          <p>ARRAY: {{farmerArr}}</p>
           <p>3. {{$ctrl.tester}}</p>
         </div>
         <!-- <ul ng-controller = "mainCtrl" ng-repeat = "farm in farmerArr">
