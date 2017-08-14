@@ -8,6 +8,14 @@ angular.module('picafarm').component('farmerPage', {
   templateUrl: 'views/farmerPage.html'
 
 });
+'use strict';
+
+angular.module('picafarm').component('farmerSearch', {
+
+  templateUrl: 'views/farmerSearch.html',
+  controller: 'mainCtrl'
+
+});
 "use strict";
 'use strict';
 
