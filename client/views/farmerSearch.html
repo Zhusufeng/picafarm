@@ -1,10 +1,18 @@
-<div ng-controller = "mainCtrl">
+ <div ng-controller = "mainCtrl">
   <table>
     <tbody>
       <tr ng-repeat = "farm in farmerArr">
           <td>
-            <a href ng-click="farmer=!farmer">  {{farm.title}} </a> <br>
+            <a href ng-click="grabFarmTitle('MAH FARM')" ng-model="user.name">  {{farm.title}} </a> <br>
             <div ng-show="farmer">  Herro. <farmer-page>{{farm.title}}</farmer-page> </div>
+            <form name="farmForm">
+              <label>Title:
+              <input type="text" name="farmTitle"
+                ng-model="user.name"
+                ng-model-options="{ getterSetter: true }" />
+              </label>
+            </form>
+            <pre>user.name = <span ng-bind="user.name()"></span></pre>
             {{farm.price}} <br>
             {{farm.description}} <br>
             {{farm.produce}} <br>
@@ -14,6 +22,17 @@
       </tr>
     </tbody>
   </table>
-</div>
+</div> 
 
 <p> Hello from Farmer Search component </p>
+
+<!-- <div ng-controller="mainCtrl">
+  <form name="userForm">
+    <label>Name:
+      <input type="text" name="userName"
+             ng-model="user.name"
+             ng-model-options="{ getterSetter: true }" />
+    </label>
+  </form>
+  <pre>user.name = <span ng-bind="user.name()"></span></pre>
+</div> -->
