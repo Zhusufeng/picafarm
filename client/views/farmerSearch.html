@@ -21,9 +21,9 @@
 <div ng-controller="mainCtrl">
   <form name="userForm">
     <label>Name:
-      <input type="text"
+      <input type="text" name="userName"
              ng-model="user.name"
-      />
+             ng-model-options="{ getterSetter: true }" />
     </label>
   </form>
   <pre>user.name = <span ng-bind="user.name()"></span></pre>

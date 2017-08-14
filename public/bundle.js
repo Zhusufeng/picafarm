@@ -3,22 +3,6 @@
 angular.module('picafarm', []).config(function () {});
 'use strict';
 
-angular.module('picafarm').component('farmerPage', {
-
-  templateUrl: 'views/farmerPage.html'
-
-});
-'use strict';
-
-angular.module('picafarm').component('farmerSearch', {
-
-  templateUrl: 'views/farmerSearch.html',
-  controller: 'mainCtrl'
-
-});
-"use strict";
-'use strict';
-
 angular.module('picafarm').controller('mainCtrl', ["$scope", "$http", function ($scope, $http) {
 
   // this.farmers = {};
@@ -47,5 +31,21 @@ angular.module('picafarm').controller('mainCtrl', ["$scope", "$http", function (
     }
   };
 }]);
+'use strict';
+
+angular.module('picafarm').component('farmerPage', {
+
+  templateUrl: 'views/farmerPage.html'
+
+});
+'use strict';
+
+angular.module('picafarm').component('farmerSearch', {
+
+  templateUrl: 'views/farmerSearch.html',
+  controller: 'mainCtrl'
+
+});
+"use strict";
 "use strict";
 //# sourceMappingURL=bundle.js.map
