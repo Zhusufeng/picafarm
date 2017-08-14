@@ -35,8 +35,8 @@
         <!--Text-->
         <h1>Hello World Something Else!</h1>
 
-        <ul ng-controller = "mainCtrl">
-          <li ng-repeat = "farm in $ctrl.farmerArr">
+        <ul ng-controller = "mainCtrl as main">
+          <li ng-repeat = "farm in main.farmerArr">
             {{farm}}
           </li>
           <li>Hello, from li! {{farm.title}}</li>
