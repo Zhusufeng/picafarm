@@ -35,36 +35,8 @@
         <!--Text-->
         <h1>Hello World Something Else!</h1>
 
-        <!-- <farmer-page ng-show="farmer"></farmer-page> -->
-        <div ng-show="farmer">  Herro. <farmer-page></farmer-page> </div>
-        <div ng-controller = "mainCtrl">
-          <table>
-            <tbody>
-              <tr ng-repeat = "farm in farmerArr">
-                  <td>
-                    <a href ng-click="farmer=!farmer">  {{farm.title}} </a> <br>
-
-                    {{farm.price}} <br>
-                    {{farm.description}} <br>
-                    {{farm.produce}} <br>
-                    {{farm.curr_subscribers}} out of {{farm.max_subscribers}} <br>
-                    ------------------------------------------------<br>
-                  </td>
-
-              </tr>
-            </tbody>
-          </table>
-
-          <ul >
-            <li ng-repeat = "farm in farmerArr">
-              <!-- {{farm}} -->
-              Farm Title: {{farm.title}}
-            </li>
-          </ul>
-          <p>1. {{main.tester}}</p>
-          <p>2. {{tester}}</p>
-          <p>ARRAY: {{farmerArr}}</p>
-          <p>3. {{$ctrl.tester}}</p>
+        <farmer-page></farmer-page>
+        <farmer-search></farmer-search>
 
       </div>
     </div>
