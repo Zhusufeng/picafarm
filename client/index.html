@@ -40,21 +40,11 @@
             <tbody>
               <tr ng-repeat = "farm in farmerArr">
                 <td>
-                  <tr>
-                    {{farm.title}}
-                  </tr>
-                  <tr>
-                    {{farm.price}}
-                  </tr>
-                  <tr>
-                    {{farm.description}}
-                  </tr>
-                  <tr>
-                    {{farm.produce}}
-                  </tr>
-                  <tr>
-                    {{farm.curr_subscribers}} / {{farm.max_subscribers}}
-                  </tr>                
+                  {{farm.title}} <br>
+                  {{farm.price}} <br>
+                  {{farm.description}} <br>
+                  {{farm.produce}} <br>
+                  {{farm.curr_subscribers}} out of {{farm.max_subscribers}} <br>
                 </td>
               </tr>
             </tbody>
