@@ -35,15 +35,15 @@
         <!--Text-->
         <h1>Hello World Something Else!</h1>
 
-        <farmer-page ng-show="farmer"></farmer-page>
-
+        <!-- <farmer-page ng-show="farmer"></farmer-page> -->
+        <div ng-show="farmer">  Herro. <farmer-page></farmer-page> </div>
         <div ng-controller = "mainCtrl">
           <table>
             <tbody>
               <tr ng-repeat = "farm in farmerArr">
                   <td>
                     <a href ng-click="farmer=!farmer">  {{farm.title}} </a> <br>
-                    <div ng-show="farmer">  Herro. <farmer-page></farmer-page> </div>
+
                     {{farm.price}} <br>
                     {{farm.description}} <br>
                     {{farm.produce}} <br>
