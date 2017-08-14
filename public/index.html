@@ -42,7 +42,7 @@
             <tbody>
               <tr ng-repeat = "farm in farmerArr">
                   <td>
-                      <a href="http://www.google.com" ng-if="clicked">{{farm.title}}  </a> <br>
+                      <span ng-if="clicked">{{farm.title}}  </span> <br>
                     {{farm.price}} <br>
                     {{farm.description}} <br>
                     {{farm.produce}} <br>
