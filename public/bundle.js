@@ -8,7 +8,7 @@ angular.module('picafarm').controller('mainCtrl', ["$scope", "$http", function (
 
   $scope.farmers = {};
   $scope.farmerArr = [];
-  $scope.get();
+
   $scope.get = function () {
     $http.get("/search").then(function (response) {
       farmerArr.push(response.data);
@@ -16,6 +16,8 @@ angular.module('picafarm').controller('mainCtrl', ["$scope", "$http", function (
       console.log(response);
     });
   };
+
+  $scope.get();
 }]);
 "use strict";
 //# sourceMappingURL=bundle.js.map

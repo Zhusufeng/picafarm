@@ -1,8 +1,8 @@
 angular.module('picafarm').controller('mainCtrl', function($scope, $http) {
 
-  $scope.farmers = {}
+  $scope.farmers = {};
   $scope.farmerArr = [];
-  $scope.get();
+  
   $scope.get = function() {
     $http.get("/search").then(function(response) {
       farmerArr.push(response.data);
@@ -10,4 +10,6 @@ angular.module('picafarm').controller('mainCtrl', function($scope, $http) {
       console.log(response);
     });
   };
+
+  $scope.get();
 });
