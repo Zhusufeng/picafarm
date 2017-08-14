@@ -42,7 +42,7 @@
             <tbody>
               <tr ng-repeat = "farm in farmerArr">
                   <td>
-                      <button ng-init="clicked = true">{{farm.title}}  </button> <br>
+                      <input type="checkbox" ng-init="clicked = true">  {{farm.title}}  </input> <br>
                     {{farm.price}} <br>
                     {{farm.description}} <br>
                     {{farm.produce}} <br>
