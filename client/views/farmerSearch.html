@@ -1,0 +1,19 @@
+<div ng-controller = "mainCtrl">
+  <table>
+    <tbody>
+      <tr ng-repeat = "farm in farmerArr">
+          <td>
+            <a href ng-click="farmer=!farmer">  {{farm.title}} </a> <br>
+            <div ng-show="farmer">  Herro. <farmer-page>{{farm.title}}</farmer-page> </div>
+            {{farm.price}} <br>
+            {{farm.description}} <br>
+            {{farm.produce}} <br>
+            {{farm.curr_subscribers}} out of {{farm.max_subscribers}} <br>
+          <br>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p> Hello from Farmer Search component </p>

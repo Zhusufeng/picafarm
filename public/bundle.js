@@ -1,6 +1,21 @@
 'use strict';
 
 angular.module('picafarm', []).config(function () {});
+'use strict';
+
+angular.module('picafarm').component('farmerPage', {
+
+  templateUrl: 'views/farmerPage.html'
+
+});
+'use strict';
+
+angular.module('picafarm').component('farmerSearch', {
+
+  templateUrl: 'views/farmerSearch.html',
+  controller: 'mainCtrl'
+
+});
 "use strict";
 'use strict';
 
@@ -9,6 +24,7 @@ angular.module('picafarm').controller('mainCtrl', ["$scope", "$http", function (
   // this.farmers = {};
   $scope.farmerArr = [];
   $scope.tester = '!!! test !!!';
+
   $scope.get = function () {
     $http.get("/search").then(function (response) {
       console.log(response.data);
