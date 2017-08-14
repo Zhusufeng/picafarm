@@ -5,7 +5,8 @@ angular.module('picafarm').controller('mainCtrl', function($scope, $http) {
   
   this.get = function() {
     $http.get("/search").then(function(response) {
-      this.farmerArr.push(response.data);
+      console.log(response.data);
+      // this.farmerArr.push(response.data);
     }).catch(function(response) {
       console.log(response);
     });
