@@ -31,17 +31,22 @@
   <div class="col-xs-6 col-lg-4 cardbox animated zoomIn">
     <div class="card">
       <!--Card content-->
-      <div class="card-body cardbox-inside ">
+      <div class="card-body cardbox-inside">
         <!--Text-->
         <h1>Hello World Something Else!</h1>
-
-         <ul ng-controller = "mainCtrl as main">
-          <li ng-repeat = "farm in main.farmerArr">
-            {{farm}}
-          </li>
-          <li>Hello, from li! {{farm.title}}</li>
-          <li>{{main.tester}}</li>
-        </ul> 
+        
+        <div ng-controller = "mainCtrl as main">
+          <ul >
+            <li ng-repeat = "farm in $ctrl.farmerArr">
+              {{farm}}
+            </li>
+            <li>Hello, from li! {{farm.title}}</li>
+            <li>{{main.tester}}</li>  
+          </ul> 
+          <p>1. {{main.tester}}</p>
+          <p>2. {{tester}}</p>
+          <p>3. {{$ctrl.tester}}</p>
+        </div>
         <!-- <ul ng-controller = "mainCtrl" ng-repeat = "farm in farmerArr">
           <li> this is farm {{farm}} </li>
           <li> this is farm array {{farmArr}} </li>
@@ -73,7 +78,6 @@
   <!-- ================ -->
 
   <!--Custom Bundle Script.-->
-  <script src="/../client/app/controllers/mainCtrl.js"></script>
   <script src="bundle.js"></script>
   <!--==========Scripts===============-->
 </body>
