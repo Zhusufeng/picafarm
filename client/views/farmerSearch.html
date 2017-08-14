@@ -3,7 +3,7 @@
     <tbody>
       <tr ng-repeat = "farm in farmerArr">
           <td>
-            <a href ng-click="farmer=!farmer">  {{farm.title}} </a> <br>
+            <a href ng-click="user.name = {{farm.title}}">  {{farm.title}} </a> <br>
             <div ng-show="farmer">  Herro. <farmer-page>{{farm.title}}</farmer-page> </div>
             <form name="farmForm">
               <label>Title:
