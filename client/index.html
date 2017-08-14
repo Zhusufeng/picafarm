@@ -34,18 +34,20 @@
       <div class="card-body cardbox-inside">
         <!--Text-->
         <h1>Hello World Something Else!</h1>
-        
+
         <div ng-controller = "mainCtrl">
           <table>
             <tbody>
               <tr ng-repeat = "farm in farmerArr">
-                <td>
-                  {{farm.title}} <br>
-                  {{farm.price}} <br>
-                  {{farm.description}} <br>
-                  {{farm.produce}} <br>
-                  {{farm.curr_subscribers}} out of {{farm.max_subscribers}} <br>
-                </td>
+                <a href="www.google.com">
+                  <td>
+                    {{farm.title}} <br>
+                    {{farm.price}} <br>
+                    {{farm.description}} <br>
+                    {{farm.produce}} <br>
+                    {{farm.curr_subscribers}} out of {{farm.max_subscribers}} <br>
+                  </td>
+                </a>
               </tr>
             </tbody>
           </table>
@@ -55,7 +57,7 @@
               <!-- {{farm}} -->
               Farm Title: {{farm.title}}
             </li>
-          </ul> 
+          </ul>
           <p>1. {{main.tester}}</p>
           <p>2. {{tester}}</p>
           <p>ARRAY: {{farmerArr}}</p>
