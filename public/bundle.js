@@ -1,6 +1,13 @@
 'use strict';
 
 angular.module('picafarm', []).config(function () {});
+'use strict';
+
+angular.module('picafarm').component('farmerPage', {
+
+  templateUrl: 'views/farmerPage.html'
+
+});
 "use strict";
 'use strict';
 
