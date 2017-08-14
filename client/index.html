@@ -35,13 +35,14 @@
         <!--Text-->
         <h1>Hello World Something Else!</h1>
 
+        <farmer-page></farmer-page>
+
         <div ng-controller = "mainCtrl">
           <table>
             <tbody>
               <tr ng-repeat = "farm in farmerArr">
 
                   <td>
-                    ------------------------------------------------<br>
                       <a href="http://www.google.com">{{farm.title}}  </a> <br>
                     {{farm.price}} <br>
                     {{farm.description}} <br>
