@@ -35,14 +35,14 @@
         <!--Text-->
         <h1>Hello World Something Else!</h1>
 
-        <farmer-page ng-init="clicked = true"></farmer-page>
+        <farmer-page ng-if="clicked"></farmer-page>
 
         <div ng-controller = "mainCtrl">
           <table>
             <tbody>
               <tr ng-repeat = "farm in farmerArr">
                   <td>
-                      <span ng-if="clicked">{{farm.title}}  </span> <br>
+                      <a ng-init="clicked = true">{{farm.title}}  </a> <br>
                     {{farm.price}} <br>
                     {{farm.description}} <br>
                     {{farm.produce}} <br>
