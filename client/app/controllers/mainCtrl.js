@@ -26,4 +26,8 @@ angular.module('picafarm').controller('mainCtrl', function($scope, $http) {
      return arguments.length ? (_name = newName) : _name;
     }
   };
+
+  $scope.grabFarmTitle = function(newName) {
+    return _name = newName;
+  };
 });

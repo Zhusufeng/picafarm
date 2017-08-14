@@ -3,7 +3,7 @@
     <tbody>
       <tr ng-repeat = "farm in farmerArr">
           <td>
-            <a href ng-click="user.name = {{farm.title}}">  {{farm.title}} </a> <br>
+            <a href ng-click="grabFarmTitle()" ng-model="user.name">  {{farm.title}} </a> <br>
             <div ng-show="farmer">  Herro. <farmer-page>{{farm.title}}</farmer-page> </div>
             <form name="farmForm">
               <label>Title:
@@ -26,7 +26,7 @@
 
 <p> Hello from Farmer Search component </p>
 
-<div ng-controller="mainCtrl">
+<!-- <div ng-controller="mainCtrl">
   <form name="userForm">
     <label>Name:
       <input type="text" name="userName"
@@ -35,4 +35,4 @@
     </label>
   </form>
   <pre>user.name = <span ng-bind="user.name()"></span></pre>
-</div>
+</div> -->
