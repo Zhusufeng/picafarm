@@ -11,19 +11,19 @@
   <meta name="author" content="Team-Albatross">
 
   <!--CSS-->
-  <link rel="stylesheet" href="./styles.css">
+  <!-- <link rel="stylesheet" href="./styles.css"> -->
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css"> -->
 
   <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"> -->
 
   <!-- Material Bootstrap  -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.2/css/mdb.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.2/css/mdb.min.css"> -->
 
   <!--Animate CSS!!-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"> -->
 </head>
 
 <body ng-app="picafarm">
@@ -31,15 +31,35 @@
   <div class="col-xs-6 col-lg-4 cardbox animated zoomIn">
     <div class="card">
       <!--Card content-->
-      <div class="card-body cardbox-inside ">
+      <div class="card-body cardbox-inside">
         <!--Text-->
-        <h1>Hello World</h1>
+        <h1>Hello World Something Else!</h1>
+        
+        <div ng-controller = "mainCtrl">
+          <table>
+            <tbody>
+              <tr ng-repeat = "farm in farmerArr">
+                <td>
+                  {{farm.title}} <br>
+                  {{farm.price}} <br>
+                  {{farm.description}} <br>
+                  {{farm.produce}} <br>
+                  {{farm.curr_subscribers}} out of {{farm.max_subscribers}} <br>
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
-        <ul ng-controller = "mainCtrl">
-          <li ng-repeat = "farm in farmerArr">
-            {{farm}}
-          </li>
-        </ul>
+          <ul >
+            <li ng-repeat = "farm in farmerArr">
+              <!-- {{farm}} -->
+              Farm Title: {{farm.title}}
+            </li>
+          </ul> 
+          <p>1. {{main.tester}}</p>
+          <p>2. {{tester}}</p>
+          <p>ARRAY: {{farmerArr}}</p>
+          <p>3. {{$ctrl.tester}}</p>
 
       </div>
     </div>

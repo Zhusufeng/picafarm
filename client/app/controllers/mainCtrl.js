@@ -1,13 +1,16 @@
 angular.module('picafarm').controller('mainCtrl', function($scope, $http) {
 
-  $scope.farmers = {}
+  // this.farmers = {};
   $scope.farmerArr = [];
-
+  $scope.tester = '!!! test !!!';
   $scope.get = function() {
     $http.get("/search").then(function(response) {
-      farmerArr.push(response.data);
+      console.log(response.data);
+      $scope.farmerArr = response.data;
     }).catch(function(response) {
       console.log(response);
     });
   };
+
+  $scope.get();
 });
