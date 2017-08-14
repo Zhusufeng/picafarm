@@ -11,19 +11,19 @@
   <meta name="author" content="Team-Albatross">
 
   <!--CSS-->
-  <link rel="stylesheet" href="./styles.css">
+  <!-- <link rel="stylesheet" href="./styles.css"> -->
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css"> -->
 
   <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"> -->
 
   <!-- Material Bootstrap  -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.2/css/mdb.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.2/css/mdb.min.css"> -->
 
   <!--Animate CSS!!-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"> -->
 </head>
 
 <body ng-app="picafarm">
@@ -33,12 +33,13 @@
       <!--Card content-->
       <div class="card-body cardbox-inside ">
         <!--Text-->
-        <h1>Hello World</h1>
+        <h1>Hello World Something Else!</h1>
 
         <ul ng-controller = "mainCtrl">
-          <li ng-repeat = "farm in farmerArr">
+          <li ng-repeat = "farm in $ctrl.farmerArr">
             {{farm}}
           </li>
+          <li>Hello, from li!</li>
         </ul>
 
       </div>
