@@ -34,8 +34,8 @@
 
 <div ng-controller="mainCtrl">
   <div class="row">
-    <div class="col-sm-6 col-md-4">
-      <div ng-repeat="farm in farmerArr" class="thumbnail">
+    <div ng-repeat="farm in farmerArr" class="col-sm-6 col-md-4">
+      <div  class="thumbnail">
         <div ng-show="!showFarm">
           <a href ng-click="showFarm = !showFarm"> {{farm.title}} </a> <br>
             {{farm.price}} <br>
