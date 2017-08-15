@@ -16,18 +16,20 @@ angular.module('picafarm').controller('mainCtrl', function($scope, $http) {
 
   $scope.hideComponent = function() {
     var elements = document.getElementsByClassName('farms');
-    if (elements.classList.contains('show')) {
-      elements.classList.remove('show');
-    }
-    elements.className += 'hide';
+    // if (elements.classList.contains('show')) {
+    //   elements.classList.remove('show');
+    // }
+    // elements.className += 'hide';
+    elements.classList.toggle('hide');
   };
 
   $scope.showComponent = function() {
     var elements = document.getElementsByClassName('farms');
-    if (elements.classList.contains('hide')) {
-      elements.classList.remove('hide');
-    }
-    elements.className += 'show';
+    // if (elements.classList.contains('hide')) {
+    //   elements.classList.remove('hide');
+    // }
+    //elements.className += 'show';
+    elements.classList.toggle('show');    
   };
 
   $scope.get();
