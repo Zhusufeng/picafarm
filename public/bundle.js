@@ -23,6 +23,7 @@ angular.module('picafarm').component('farmerSearch', {
 
 });
 "use strict";
+"use strict";
 'use strict';
 
 angular.module('picafarm').controller('mainCtrl', ["$scope", "$http", function ($scope, $http) {
@@ -84,5 +85,4 @@ angular.module('picafarm').controller('mainCtrl', ["$scope", "$http", function (
     return _name = newName;
   };
 }]);
-"use strict";
 //# sourceMappingURL=bundle.js.map
