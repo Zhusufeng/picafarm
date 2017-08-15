@@ -15,12 +15,12 @@ angular.module('picafarm').controller('mainCtrl', function($scope, $http) {
   };
 
   $scope.hideComponent = function() {
-    $scope.elements = document.getElementsByClassName('farms');
+    var elements = document.getElementsByClassName('farms');
     // if (elements.classList.contains('show')) {
     //   elements.classList.remove('show');
     // }
     // elements.className += 'hide';
-    console.log('Logging what elements is here: ',$scope.elements);
+    console.log('Logging what elements is here: ', elements);
     elements.forEach(function(item) {
       console.log('Logging what elements classList is here: ', item.classList);
     });
