@@ -1,43 +1,23 @@
- <div ng-controller = "mainCtrl">
-  <table>
-    <tbody>
-      <tr ng-repeat = "farm in farmerArr">
-          <td class="farms" ng-show="!showFarm">
-            <a href ng-click= "showFarm = !showFarm" ng-model="user.name">  {{farm.title}} </a> <br>
-            <!-- <div ng-show="farmer">  Herro. </div>  -->
-            <!-- <farmer-page ng-show="showFarm" farm = "farm"></farmer-page>  -->
-            <form name="farmForm">
-              <label>Title:
-              <input type="text" name="farmTitle"
-                ng-model="user.name"
-                ng-model-options="{ getterSetter: true }" />
-              </label>
-            </form>
-            <pre>user.name = <span ng-bind="user.name()"></span></pre>
-            {{farm.price}} <br>
-            {{farm.description}} <br>
+
+
+<div ng-controller="mainCtrl">
+  <div class="row">
+    <div ng-repeat="farm in farmerArr" class="col-sm-4 col-md-4">
+      <div  class="thumbnail">
+        <img src="http://scontent.cdninstagram.com/t51.2885-15/s320x320/sh0.08/e35/18879056_2286478618244829_3371351715914711040_n.jpg" >
+        <div ng-show="!showFarm">
+            <h4><a href ng-click="showFarm = !showFarm"> {{farm.title}} </a></h4>
+            <h5> $ {{farm.price}} </h5><br>
             {{farm.produce}} <br>
             {{farm.curr_subscribers}} out of {{farm.max_subscribers}} <br>
-          <br>
-          </td>
-          <td ng-show="showFarm"> 
-            <farmer-page farm = "farm"></farmer-page> 
-            <button ng-click="showFarm = !showFarm"> back </button>            
-          </td>
-      </tr>
-    </tbody>
-  </table>
-</div> 
+        </div>
 
-<p> Hello from Farmer Search component </p>
+        <div ng-show="showFarm">
+          <farmer-page farm="farm"></farmer-page>
+          <button class="btn btn-danger" ng-click="showFarm = !showFarm"> back </button>
+        </div>
 
-<!-- <div ng-controller="mainCtrl">
-  <form name="userForm">
-    <label>Name:
-      <input type="text" name="userName"
-             ng-model="user.name"
-             ng-model-options="{ getterSetter: true }" />
-    </label>
-  </form>
-  <pre>user.name = <span ng-bind="user.name()"></span></pre>
-</div> -->
+      </div>
+    </div>
+  </div>
+</div>

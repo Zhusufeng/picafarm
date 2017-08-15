@@ -1,6 +1,6 @@
-<h1 style="color: blue; font-size: 46px;"> Hello from the Farmer Page , {{$ctrl.farm}}</h1>
-<p>{{$ctrl.farm.description}}</p>
+<ul class="list-group" ng-repeat="veggie in $ctrl.farm.produce">
+    <li class="list-group-item" >{{veggie}}</li>
+</ul>
 
-<!-- <div ng-controller = "mainCtrl">
-  
-</div> -->
+<p>{{$ctrl.farm.description}}</p>
+<li> $ {{$ctrl.farm.price}}</li>
