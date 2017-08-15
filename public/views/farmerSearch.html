@@ -20,8 +20,9 @@
             {{farm.curr_subscribers}} out of {{farm.max_subscribers}} <br>
           <br>
           </td>
-          <td> 
-            <farmer-page ng-show="showFarm" farm = "farm"></farmer-page> 
+          <td ng-show="showFarm"> 
+            <farmer-page farm = "farm"></farmer-page> 
+            <button ng-click="showFarm = !showFarm"> back </button>            
           </td>
       </tr>
     </tbody>
