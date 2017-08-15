@@ -1,1 +1,1 @@
-{"version":3,"sources":["temp.css"],"names":[],"mappings":"AAAA","file":"../styles.css","sourcesContent":["/* kevin su is monnkey */"]}
+{"version":3,"sources":["temp.css"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA","file":"../styles.css","sourcesContent":["/* .farms {\n  \n} */\n\n.hide {\n  display: none;\n}\n\n.show {\n  display: inline;\n}\n\n/* .profile {\n\n} */"]}

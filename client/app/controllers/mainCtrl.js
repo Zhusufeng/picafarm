@@ -14,6 +14,18 @@ angular.module('picafarm').controller('mainCtrl', function($scope, $http) {
     });
   };
 
+  $scope.hideComponent = function() {
+    var elements = document.getElementsByClassName('farms');
+    elements.classList.remove('show');
+    elements.className += 'hide';
+  };
+
+  $scope.showComponent = function() {
+    var elements = document.getElementsByClassName('farms');
+    elements.classList.remove('hide');
+    elements.className += 'show';
+  };
+
   $scope.get();
 
   var _name = 'Brian';
