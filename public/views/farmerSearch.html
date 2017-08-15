@@ -1,8 +1,8 @@
-<div ng-controller="mainCtrl">
+<!-- <div ng-controller="mainCtrl">
   <table>
     <tbody>
-      <tr ng-repeat="farm in farmerArr" class="panel panel-default">
-        <td class="panel-body" ng-show="!showFarm">
+      <tr ng-repeat="farm in farmerArr">
+        <td ng-show="!showFarm">
           <a href ng-click="showFarm = !showFarm"> {{farm.title}} </a> <br>
             {{farm.price}} <br>
             {{farm.description}} <br>
@@ -16,4 +16,38 @@
       </tr>
     </tbody>
   </table>
+</div> -->
+<!-- this is a test -->
+<!-- <div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="..." alt="...">
+      <div class="caption">
+        <h3>Thumbnail label</h3>
+        <p>...</p>
+        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<div ng-controller="mainCtrl">
+  <div class="row">
+    <div class="col-sm-6 col-md-4">
+      <div ng-repeat="farm in farmerArr" class="thumbnail">
+        <div ng-show="!showFarm">
+          <a href ng-click="showFarm = !showFarm"> {{farm.title}} </a> <br>
+            {{farm.price}} <br>
+            {{farm.description}} <br>
+            {{farm.produce}} <br>
+            {{farm.curr_subscribers}} out of {{farm.max_subscribers}} <br>
+        </div>
+        <div ng-show="showFarm">
+          <farmer-page farm="farm"></farmer-page>
+          <button class="btn btn-danger" ng-click="showFarm = !showFarm"> back </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
