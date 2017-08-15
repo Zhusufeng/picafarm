@@ -4,7 +4,7 @@ angular.module('picafarm').component('farmerPage',{
     farm : '<'
   },
 
-  controller: 'mainCtrl',  
+  // controller: 'mainCtrl',  
 
   templateUrl: 'views/farmerPage.html'
 
