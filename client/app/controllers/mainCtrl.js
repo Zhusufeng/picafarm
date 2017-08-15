@@ -25,6 +25,7 @@ angular.module('picafarm').controller('mainCtrl', function($scope, $http) {
 
     for (var i = 0; i < elements.length; i += 1) {
       console.log('Logging what elements classList is here: ', elements[i].classList);
+      elements[i].classList.toggle('hide');
     }
 
     //console.log('Logging what elements classList is here: ',$scope.elements.classList);
