@@ -20,7 +20,8 @@ angular.module('picafarm').controller('mainCtrl', function($scope, $http) {
     //   elements.classList.remove('show');
     // }
     // elements.className += 'hide';
-    elements.classList.toggle('hide');
+    console.log(elements);
+   // elements.classList.toggle('hide');
   };
 
   $scope.showComponent = function() {
