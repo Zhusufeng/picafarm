@@ -42,13 +42,17 @@ angular.module('picafarm').controller('mainCtrl', ["$scope", "$http", function (
 
   $scope.hideComponent = function () {
     var elements = document.getElementsByClassName('farms');
-    elements.classList.remove('show');
+    if (elements.classList.contains('show')) {
+      elements.classList.remove('show');
+    }
     elements.className += 'hide';
   };
 
   $scope.showComponent = function () {
     var elements = document.getElementsByClassName('farms');
-    elements.classList.remove('hide');
+    if (elements.classList.contains('hide')) {
+      elements.classList.remove('hide');
+    }
     elements.className += 'show';
   };
 
