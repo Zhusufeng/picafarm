@@ -2,7 +2,7 @@
   <table>
     <tbody>
       <tr ng-repeat = "farm in farmerArr">
-          <td>
+          <td class="farms">
             <a href ng-click="showFarm = !showFarm" ng-model="user.name">  {{farm.title}} </a> <br>
             <!-- <div ng-show="farmer">  Herro. </div>  -->
             <farmer-page ng-show="showFarm" farm = "farm"></farmer-page> 
@@ -19,6 +19,9 @@
             {{farm.produce}} <br>
             {{farm.curr_subscribers}} out of {{farm.max_subscribers}} <br>
           <br>
+          </td>
+          <td>
+            <farmer-page ng-show="showFarm" farm = "farm"></farmer-page> 
           </td>
       </tr>
     </tbody>
