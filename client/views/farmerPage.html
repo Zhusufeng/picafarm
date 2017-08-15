@@ -1,6 +1,6 @@
 <div class="jumbotron">
-  <h1>Welcome to {{$ctrl.farm.title}}</h1>
-  <h3>{{$ctrl.farm.produce}}</h3>
+  <h2>{{$ctrl.farm.title}}</h2>
+  <h3 ng-repeat="veggie in $ctrl.farm.produce">{{veggie}}</h3>
   <p>{{$ctrl.farm.description}}</p>
   <h3> $ {{$ctrl.farm.price}}</h3>
 </div>
