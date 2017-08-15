@@ -4,7 +4,7 @@
       <tr ng-repeat = "farm in farmerArr">
           <td>
             <a href ng-click="grabFarmTitle({{farm.title}})" ng-model="user.name">  {{farm.title}} </a> <br>
-            <div ng-show="farmer">  Herro. <farmer-page>{{farm.title}}</farmer-page> </div>
+            <div ng-show="farmer">  Herro. <farmer-page farm="$ctrl.farm"></farmer-page> </div>
             <form name="farmForm">
               <label>Title:
               <input type="text" name="farmTitle"

@@ -5,6 +5,10 @@ angular.module('picafarm', []).config(function () {});
 
 angular.module('picafarm').component('farmerPage', {
 
+  bindings: {
+    farm: '<'
+  },
+
   templateUrl: 'views/farmerPage.html'
 
 });
