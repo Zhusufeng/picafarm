@@ -5,6 +5,12 @@ angular.module('picafarm', []).config(function () {});
 
 angular.module('picafarm').component('farmerPage', {
 
+  bindings: {
+    farm: '<'
+  },
+
+  // controller: 'mainCtrl',  
+
   templateUrl: 'views/farmerPage.html'
 
 });
@@ -17,6 +23,7 @@ angular.module('picafarm').component('farmerSearch', {
 
 });
 "use strict";
+"use strict";
 'use strict';
 
 angular.module('picafarm').controller('mainCtrl', ["$scope", "$http", function ($scope, $http) {
@@ -25,6 +32,8 @@ angular.module('picafarm').controller('mainCtrl', ["$scope", "$http", function (
   $scope.farmerArr = [];
   $scope.tester = '!!! test !!!';
 
+  $scope.selectedFarm = {};
+
   $scope.get = function () {
     $http.get("/search").then(function (response) {
       console.log(response.data);
@@ -32,6 +41,33 @@ angular.module('picafarm').controller('mainCtrl', ["$scope", "$http", function (
     }).catch(function (response) {
       console.log(response);
     });
+  };
+
+  $scope.hideComponent = function () {
+    var elements = document.getElementsByClassName('farms');
+    // if (elements.classList.contains('show')) {
+    //   elements.classList.remove('show');
+    // }
+    // elements.className += 'hide';
+    console.log('Logging what elements is here: ', elements);
+    console.log('Logging type of elements: ', Array.isArray(elements));
+
+    for (var i = 0; i < elements.length; i += 1) {
+      console.log('Logging what elements classList is here: ', elements[i].classList);
+      elements[i].classList.toggle('hide');
+    }
+
+    //console.log('Logging what elements classList is here: ',$scope.elements.classList);
+    // elements.classList.toggle('hide');
+  };
+
+  $scope.showComponent = function () {
+    var elements = document.getElementsByClassName('farms');
+    // if (elements.classList.contains('hide')) {
+    //   elements.classList.remove('hide');
+    // }
+    //elements.className += 'show';
+    elements.classList.toggle('show');
   };
 
   $scope.get();
@@ -51,5 +87,4 @@ angular.module('picafarm').controller('mainCtrl', ["$scope", "$http", function (
     return _name = newName;
   };
 }]);
-"use strict";
 //# sourceMappingURL=bundle.js.map

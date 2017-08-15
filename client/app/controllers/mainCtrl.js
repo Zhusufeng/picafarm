@@ -4,6 +4,7 @@ angular.module('picafarm').controller('mainCtrl', function($scope, $http) {
   $scope.farmerArr = [];
   $scope.tester = '!!! test !!!';
 
+  $scope.selectedFarm = {};
 
   $scope.get = function() {
     $http.get("/search").then(function(response) {
@@ -12,6 +13,33 @@ angular.module('picafarm').controller('mainCtrl', function($scope, $http) {
     }).catch(function(response) {
       console.log(response);
     });
+  };
+
+  $scope.hideComponent = function() {
+    var elements = document.getElementsByClassName('farms');
+    // if (elements.classList.contains('show')) {
+    //   elements.classList.remove('show');
+    // }
+    // elements.className += 'hide';
+    console.log('Logging what elements is here: ', elements);
+    console.log('Logging type of elements: ', Array.isArray(elements));
+
+    for (var i = 0; i < elements.length; i += 1) {
+      console.log('Logging what elements classList is here: ', elements[i].classList);
+      elements[i].classList.toggle('hide');
+    }
+
+    //console.log('Logging what elements classList is here: ',$scope.elements.classList);
+   // elements.classList.toggle('hide');
+  };
+
+  $scope.showComponent = function() {
+    var elements = document.getElementsByClassName('farms');
+    // if (elements.classList.contains('hide')) {
+    //   elements.classList.remove('hide');
+    // }
+    //elements.className += 'show';
+    elements.classList.toggle('show');    
   };
 
   $scope.get();
