@@ -21,10 +21,10 @@ angular.module('picafarm').controller('mainCtrl', function($scope, $http) {
     // }
     // elements.className += 'hide';
     console.log('Logging what elements is here: ', elements);
-    console.log('Logging type of elements: ', typeof elements);
+    console.log('Logging type of elements: ', Array.isArray(elements));
 
     for (var i = 0; i < elements.length; i += 1) {
-      console.log('Logging what elements classList is here: ', elements[i]);
+      console.log('Logging what elements classList is here: ', elements[i].classList);
     }
 
     //console.log('Logging what elements classList is here: ',$scope.elements.classList);
