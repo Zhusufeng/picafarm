@@ -1,9 +1,9 @@
  <div ng-controller = "mainCtrl">
-  <table>
+  <table ng-show="!showFarm">
     <tbody>
       <tr ng-repeat = "farm in farmerArr">
-          <td class="farms" ng-show="!showFarm">
-            <a href ng-click= "showFarm = !showFarm" ng-model="user.name">  {{farm.title}} </a> <br>
+          <td class="farms">
+            <a href ng-click= "showFarm = !showFarm; selectedFarm = farm" ng-model="user.name">  {{farm.title}} </a> <br>
             <!-- <div ng-show="farmer">  Herro. </div>  -->
             <!-- <farmer-page ng-show="showFarm" farm = "farm"></farmer-page>  -->
             <form name="farmForm">
@@ -19,14 +19,14 @@
             {{farm.produce}} <br>
             {{farm.curr_subscribers}} out of {{farm.max_subscribers}} <br>
           <br>
-          </td>
-          <td ng-show="showFarm"> 
-            <farmer-page farm = "farm"></farmer-page> 
-            <button ng-click="showFarm = !showFarm"> back </button>            
-          </td>
+        </td>
       </tr>
     </tbody>
   </table>
+  <div ng-show="showFarm">
+    <farmer-page farm = "farm"></farmer-page>
+    <button ng-click="showFarm = !showFarm"> back </button>       
+  </div>
 </div> 
 
 <p> Hello from Farmer Search component </p>
