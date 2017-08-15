@@ -1,6 +1,10 @@
 <div class="jumbotron">
   <h2>{{$ctrl.farm.title}}</h2>
-  <h3 ng-repeat="veggie in $ctrl.farm.produce">{{veggie}}</h3>
+    <ul>
+      <h3 ng-repeat="veggie in $ctrl.farm.produce">
+        <li>{{veggie}}</li>
+      </h3>
+    </ul>
   <p>{{$ctrl.farm.description}}</p>
   <h3> $ {{$ctrl.farm.price}}</h3>
 </div>
