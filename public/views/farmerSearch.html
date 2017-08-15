@@ -4,9 +4,8 @@
       <div  class="thumbnail">
 
         <div ng-show="!showFarm">
-            <h4><a href ng-click="showFarm = !showFarm"> {{farm.title}} </a></h4> <br>
-            {{farm.price}} <br>
-            {{farm.description}} <br>
+            <h4><a href ng-click="showFarm = !showFarm"> {{farm.title}} </a></h4>
+            <h5> $ {{farm.price}} </h5><br>
             {{farm.produce}} <br>
             {{farm.curr_subscribers}} out of {{farm.max_subscribers}} <br>
         </div>
