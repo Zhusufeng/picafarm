@@ -1,42 +1,19 @@
- <div ng-controller = "mainCtrl">
+<div ng-controller="mainCtrl">
   <table>
     <tbody>
-      <tr ng-repeat = "farm in farmerArr">
-          <td class="farms" ng-show="!showFarm">
-            <a href ng-click= "showFarm = !showFarm" ng-model="user.name">  {{farm.title}} </a> <br>
-
-            <form name="farmForm">
-              <label>Title:
-              <input type="text" name="farmTitle"
-                ng-model="user.name"
-                ng-model-options="{ getterSetter: true }" />
-              </label>
-            </form>
-            <pre>user.name = <span ng-bind="user.name()"></span></pre>
+      <tr ng-repeat="farm in farmerArr">
+        <td class="farms" ng-show="!showFarm">
+          <a href ng-click="showFarm = !showFarm"> {{farm.title}} </a> <br>
             {{farm.price}} <br>
             {{farm.description}} <br>
             {{farm.produce}} <br>
             {{farm.curr_subscribers}} out of {{farm.max_subscribers}} <br>
-          <br>
-          </td>
-          <td ng-show="showFarm">
-            <farmer-page farm = "farm"></farmer-page>
-            <button ng-click="showFarm = !showFarm"> back </button>
-          </td>
+        </td>
+        <td ng-show="showFarm">
+          <farmer-page farm="farm"></farmer-page>
+          <button class="btn btn-danger" ng-click="showFarm = !showFarm"> back </button>
+        </td>
       </tr>
     </tbody>
   </table>
 </div>
-
-<p> Hello from Farmer Search component </p>
-
-<!-- <div ng-controller="mainCtrl">
-  <form name="userForm">
-    <label>Name:
-      <input type="text" name="userName"
-             ng-model="user.name"
-             ng-model-options="{ getterSetter: true }" />
-    </label>
-  </form>
-  <pre>user.name = <span ng-bind="user.name()"></span></pre>
-</div> -->
