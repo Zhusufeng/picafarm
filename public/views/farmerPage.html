@@ -1,8 +1,8 @@
-<ul>
-  <h3 ng-repeat="veggie in $ctrl.farm.produce">
-    <li>{{veggie}}</li>
-  </h3>
+<ul class="list-group">
+  <li ng-repeat="veggie in $ctrl.farm.produce">
+    <li class="list-group-item" >{{veggie}}</li>
+  </li>
 </ul>
 
 <p>{{$ctrl.farm.description}}</p>
-<h3> $ {{$ctrl.farm.price}}</h3>
+<li> $ {{$ctrl.farm.price}}</li>
