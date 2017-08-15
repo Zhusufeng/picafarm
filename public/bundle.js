@@ -23,6 +23,7 @@ angular.module('picafarm').component('farmerSearch', {
 
 });
 "use strict";
+"use strict";
 'use strict';
 
 angular.module('picafarm').controller('mainCtrl', ["$scope", "$http", function ($scope, $http) {
@@ -47,6 +48,7 @@ angular.module('picafarm').controller('mainCtrl', ["$scope", "$http", function (
     // }
     // elements.className += 'hide';
     console.log('Logging what elements is here: ', $scope.elements);
+    console.log('Logging what elements classList is here: ', $scope.elements.classList);
     // elements.classList.toggle('hide');
   };
 
@@ -76,5 +78,4 @@ angular.module('picafarm').controller('mainCtrl', ["$scope", "$http", function (
     return _name = newName;
   };
 }]);
-"use strict";
 //# sourceMappingURL=bundle.js.map
