@@ -1,8 +1,8 @@
 <div ng-controller="mainCtrl">
   <table>
-    <tbody>
+    <tbody class="panel panel-default">
       <tr ng-repeat="farm in farmerArr">
-        <td class="farms" ng-show="!showFarm">
+        <td class="panel-body" ng-show="!showFarm">
           <a href ng-click="showFarm = !showFarm"> {{farm.title}} </a> <br>
             {{farm.price}} <br>
             {{farm.description}} <br>
