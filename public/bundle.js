@@ -1,6 +1,7 @@
 'use strict';
 
 angular.module('picafarm', []).config(function () {});
+"use strict";
 'use strict';
 
 angular.module('picafarm').component('farmerPage', {
@@ -86,5 +87,4 @@ angular.module('picafarm').controller('mainCtrl', ["$scope", "$http", function (
     return _name = newName;
   };
 }]);
-"use strict";
 //# sourceMappingURL=bundle.js.map
