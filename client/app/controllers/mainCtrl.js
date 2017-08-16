@@ -20,10 +20,14 @@ angular.module('picafarm').controller('mainCtrl', function ($scope, $http) {
   $scope.pageChanger = (val) => {
     debugger;
     for (var item in $scope.pages) {
-      if (item === val) {
-        $scope.pages[item] = true;
+      if (item === val) { 
+        $scope.$apply(() => {
+          $scope.pages[item] = true;
+        });
       } else {
-        $scope.pages[item] = false;
+        $scope.$apply(() => {
+          $scope.pages[item] = false;
+        });
       }
     }
   };

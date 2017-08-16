@@ -63,9 +63,13 @@ angular.module('picafarm').controller('mainCtrl', ["$scope", "$http", function (
     debugger;
     for (var item in $scope.pages) {
       if (item === val) {
-        $scope.pages[item] = true;
+        $scope.$apply(function () {
+          $scope.pages[item] = true;
+        });
       } else {
-        $scope.pages[item] = false;
+        $scope.$apply(function () {
+          $scope.pages[item] = false;
+        });
       }
     }
   };
