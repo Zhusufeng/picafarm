@@ -1,6 +1,18 @@
 'use strict';
 
-angular.module('picafarm', []).config(function () {});
+angular.module('picafarm', ['ui.router']).config(["$stateProvider", "$urlRouterProvider", "$locationProvider", function ($stateProvider, $urlRouterProvider, $locationProvider) {
+    $stateProvider.state('home', {
+        url: '/',
+        template: '<farmer-search></farmer-search>'
+    }).state('login', {
+        url: '/login',
+        // template: '<login></login>'
+        templateUrl: "./../views/register.html"
+    });
+
+    $urlRouterProvider.otherwise('/');
+}]);
+"use strict";
 'use strict';
 
 angular.module('picafarm').component('farmerPage', {
@@ -76,5 +88,4 @@ angular.module('picafarm').controller('mainCtrl', ["$scope", "$http", function (
 
   $scope.get();
 }]);
-"use strict";
 //# sourceMappingURL=bundle.js.map
