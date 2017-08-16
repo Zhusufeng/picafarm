@@ -3,35 +3,6 @@
 angular.module('picafarm', []).config(function () {});
 'use strict';
 
-angular.module('picafarm').component('farmerPage', {
-
-  bindings: {
-    farm: '<'
-  },
-
-  // controller: 'mainCtrl',  
-
-  templateUrl: 'views/farmerPage.html'
-
-});
-'use strict';
-
-angular.module('picafarm').component('farmerSearch', {
-
-  templateUrl: 'views/farmerSearch.html',
-  controller: 'mainCtrl'
-
-});
-'use strict';
-
-angular.module('picafarm').component('navbar', {
-
-  templateUrl: 'views/navbar.html',
-  controller: 'mainCtrl'
-
-});
-'use strict';
-
 angular.module('picafarm').controller('mainCtrl', ["$scope", "$http", function ($scope, $http) {
 
   // this.farmers = {};
@@ -94,4 +65,33 @@ angular.module('picafarm').controller('mainCtrl', ["$scope", "$http", function (
   };
 }]);
 "use strict";
+'use strict';
+
+angular.module('picafarm').component('farmerPage', {
+
+  bindings: {
+    farm: '<'
+  },
+
+  // controller: 'mainCtrl',  
+
+  templateUrl: 'views/farmerPage.html'
+
+});
+'use strict';
+
+angular.module('picafarm').component('farmerSearch', {
+
+  templateUrl: 'views/farmerSearch.html',
+  controller: 'mainCtrl'
+
+});
+'use strict';
+
+angular.module('picafarm').component('navbar', {
+
+  templateUrl: 'views/navbar.html',
+  controller: 'mainCtrl'
+
+});
 //# sourceMappingURL=bundle.js.map
