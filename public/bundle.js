@@ -3,38 +3,6 @@
 angular.module('picafarm', []).config(function () {});
 'use strict';
 
-angular.module('picafarm').controller('mainCtrl', ["$scope", "$http", function ($scope, $http) {
-
-  $scope.farmerArr = [];
-
-  // $scope.farmerSearchPage = true;
-  // $scope.loginPage = false;
-  // $scope.signUpPage = false;
-
-  $scope.pages = {
-    farmerSearchPage: false,
-    loginPage: false,
-    signUpPage: false
-  };
-
-  $scope.get = function () {
-    $http.get("/search").then(function (response) {
-      console.log(response.data);
-      $scope.farmerArr = response.data;
-    }).catch(function (response) {
-      console.log(response);
-    });
-  };
-
-  $scope.pageChanger = function (val) {
-    if (val) {}
-  };
-
-  $scope.get();
-}]);
-"use strict";
-'use strict';
-
 angular.module('picafarm').component('farmerPage', {
 
   bindings: {
@@ -70,4 +38,38 @@ angular.module('picafarm').component('navbar', {
   controller: 'mainCtrl'
 
 });
+'use strict';
+
+angular.module('picafarm').controller('mainCtrl', ["$scope", "$http", function ($scope, $http) {
+
+  $scope.farmerArr = [];
+
+  $scope.pages = {
+    farmerSearchPage: false,
+    loginPage: false,
+    signUpPage: false
+  };
+
+  $scope.get = function () {
+    $http.get("/search").then(function (response) {
+      console.log(response.data);
+      $scope.farmerArr = response.data;
+    }).catch(function (response) {
+      console.log(response);
+    });
+  };
+
+  $scope.pageChanger = function (val) {
+    for (var item in pages) {
+      if (item === val) {
+        pages[item] = true;
+      } else {
+        pages[item] = false;
+      }
+    }
+  };
+
+  $scope.get();
+}]);
+"use strict";
 //# sourceMappingURL=bundle.js.map

@@ -2,10 +2,6 @@ angular.module('picafarm').controller('mainCtrl', function ($scope, $http) {
 
   $scope.farmerArr = [];
 
-  // $scope.farmerSearchPage = true;
-  // $scope.loginPage = false;
-  // $scope.signUpPage = false;
-
   $scope.pages = {
     farmerSearchPage: false,
     loginPage: false,
@@ -22,8 +18,12 @@ angular.module('picafarm').controller('mainCtrl', function ($scope, $http) {
   };
 
   $scope.pageChanger = (val) => {
-    if (val) {
-
+    for (var item in pages) {
+      if (item === val) {
+        pages[item] = true;
+      } else {
+        pages[item] = false;
+      }
     }
   };
 
