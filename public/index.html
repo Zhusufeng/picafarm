@@ -23,26 +23,20 @@
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.2/css/mdb.min.css"> -->
 
   <!--Animate CSS!!-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"> -->
 </head>
 
-<body ng-app="picafarm">
-
-  <div class="container">
-    <div class="jumbotron">
-      <h1>PicAFarm</h1>
-      <p>the best place in the world to pick community farms.</p>
-    </div>
-  </div>
-
-  <div class="container">
-    <farmer-search></farmer-search>
-  </div>
-
+<body ng-app="picafarm" ng-controller="mainCtrl">
+  <navbar></navbar>
+  <ui-view></ui-view>
+  
   <!--==========Scripts===============-->
   <!-- Angular CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
   <!-- =========== -->
+
+  <!-- Angular UI Route -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
 
   <!-- JQuery -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

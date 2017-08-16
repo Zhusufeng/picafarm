@@ -41,6 +41,7 @@ gulp.task('copy:cssPlugin', function () {
 //CSS
 gulp.task('build-css', function () {
     return gulp.src(paths.cssSource)
+        .pipe(print())
         .pipe(sourcemaps.init())
         //Source maps is debugging thing. it's helping us to read.
         .pipe(concat('styles.css'))
@@ -78,12 +79,14 @@ gulp.task('js', function () {
 //this task will compress all of your views but will not compile them into one.
 gulp.task('views', function () {
     return gulp.src(paths.viewsSource)
+        .pipe(print())
         .pipe(gulp.dest("./public/views"));
 });
 
 //This task makes a copy of your index.html and compresses it and moves it to the dist folder
 gulp.task('index', function () {
     return gulp.src(paths.indexSource)
+        .pipe(print())
         .pipe(gulp.dest("./public"));
 });
 
