@@ -18,6 +18,7 @@ angular.module('picafarm').controller('mainCtrl', function ($scope, $http) {
   };
 
   $scope.pageChanger = (val) => {
+    debugger;
     for (var item in $scope.pages) {
       if (item === val) {
         $scope.pages[item] = true;
