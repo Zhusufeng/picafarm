@@ -38,11 +38,14 @@ angular.module('picafarm').component('navbar', {
   controller: 'mainCtrl'
 
 });
+"use strict";
 'use strict';
 
 angular.module('picafarm').controller('mainCtrl', ["$scope", "$http", function ($scope, $http) {
 
   $scope.farmerArr = [];
+
+  $scope.farmerSearchPage = true;
 
   $scope.pages = {
     farmerSearchPage: true,
@@ -60,7 +63,7 @@ angular.module('picafarm').controller('mainCtrl', ["$scope", "$http", function (
   };
 
   $scope.pageChanger = function (val) {
-    for (var item in pages) {
+    for (var item in $scope.pages) {
       if (item === val) {
         pages[item] = true;
       } else {
@@ -71,5 +74,4 @@ angular.module('picafarm').controller('mainCtrl', ["$scope", "$http", function (
 
   $scope.get();
 }]);
-"use strict";
 //# sourceMappingURL=bundle.js.map
