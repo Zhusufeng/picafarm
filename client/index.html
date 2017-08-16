@@ -26,9 +26,9 @@
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"> -->
 </head>
 
-<body ng-app="picafarm">
+<body ng-app="picafarm" ng-controller="mainCtrl">
   <navbar></navbar>
-  <farmer-search ng-show="farmerSearchPage"></farmer-search>
+  <farmer-search ng-show="pages.farmerSearchPage"></farmer-search>
   <login ng-show="pages.loginPage"></login>
   <!-- <add-farm></add-farm-page> -->
 

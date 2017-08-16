@@ -1,9 +1,7 @@
 angular.module('picafarm').controller('mainCtrl', function ($scope, $http) {
 
   $scope.farmerArr = [];
-
-  $scope.farmerSearchPage = true;
-
+  
   $scope.pages = {
     farmerSearchPage: true,
     loginPage: false,
