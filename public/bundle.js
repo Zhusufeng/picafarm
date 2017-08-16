@@ -13,24 +13,6 @@ angular.module('picafarm', ['ui.router']).config(["$stateProvider", "$urlRouterP
 }]);
 'use strict';
 
-angular.module('picafarm').controller('mainCtrl', ["$scope", "$http", function ($scope, $http) {
-
-  $scope.farmerArr = [];
-
-  $scope.get = function () {
-    $http.get("/search").then(function (response) {
-      console.log(response.data);
-      $scope.farmerArr = response.data;
-    }).catch(function (response) {
-      console.log(response);
-    });
-  };
-
-  $scope.get();
-}]);
-"use strict";
-'use strict';
-
 angular.module('picafarm').component('farmerPage', {
 
   bindings: {
@@ -66,4 +48,22 @@ angular.module('picafarm').component('navbar', {
   controller: 'mainCtrl'
 
 });
+"use strict";
+'use strict';
+
+angular.module('picafarm').controller('mainCtrl', ["$scope", "$http", function ($scope, $http) {
+
+  $scope.farmerArr = [];
+
+  $scope.get = function () {
+    $http.get("/search").then(function (response) {
+      console.log(response.data);
+      $scope.farmerArr = response.data;
+    }).catch(function (response) {
+      console.log(response);
+    });
+  };
+
+  $scope.get();
+}]);
 //# sourceMappingURL=bundle.js.map
