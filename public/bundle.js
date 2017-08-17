@@ -56,7 +56,7 @@ angular.module('picafarm').component('navbar', {
 angular.module('picafarm').component('signup', {
 
   templateUrl: 'views/signup.html',
-  controller: 'mainCtrl'
+  controller: 'userCtrl'
 
 });
 'use strict';
@@ -75,6 +75,13 @@ angular.module('picafarm').controller('mainCtrl', ["$scope", "$http", function (
   };
 
   $scope.get();
+}]);
+'use strict';
+
+angular.module('picafarm').controller('userCtrl', ["$scope", function ($scope) {
+
+  //endpoint: /user/signup
+
 }]);
 "use strict";
 //# sourceMappingURL=bundle.js.map

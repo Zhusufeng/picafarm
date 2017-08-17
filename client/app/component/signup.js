@@ -1,6 +1,6 @@
 angular.module('picafarm').component('signup', {
   
     templateUrl: 'views/signup.html',
-    controller: 'mainCtrl'
+    controller: 'userCtrl'
   
   });
