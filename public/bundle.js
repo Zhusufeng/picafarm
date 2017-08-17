@@ -1,15 +1,18 @@
 'use strict';
 
 angular.module('picafarm', ['ui.router']).config(["$stateProvider", "$urlRouterProvider", "$locationProvider", function ($stateProvider, $urlRouterProvider, $locationProvider) {
-    $stateProvider.state('home', {
-        url: '/',
-        template: '<farmer-search></farmer-search>'
-    }).state('login', {
-        url: '/login',
-        template: '<login></login>'
-    });
+  $stateProvider.state('home', {
+    url: '/',
+    template: '<farmer-search></farmer-search>'
+  }).state('login', {
+    url: '/login',
+    template: '<login></login>'
+  }).state('signup', {
+    url: '/signup',
+    template: '<signup></signup>'
+  });
 
-    $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/');
 }]);
 'use strict';
 
@@ -45,6 +48,14 @@ angular.module('picafarm').component('login', {
 angular.module('picafarm').component('navbar', {
 
   templateUrl: 'views/navbar.html',
+  controller: 'mainCtrl'
+
+});
+'use strict';
+
+angular.module('picafarm').component('signup', {
+
+  templateUrl: 'views/signup.html',
   controller: 'mainCtrl'
 
 });
