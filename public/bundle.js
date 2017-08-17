@@ -48,7 +48,6 @@ angular.module('picafarm').component('navbar', {
   controller: 'mainCtrl'
 
 });
-"use strict";
 'use strict';
 
 angular.module('picafarm').controller('mainCtrl', ["$scope", "$http", function ($scope, $http) {
@@ -66,4 +65,5 @@ angular.module('picafarm').controller('mainCtrl', ["$scope", "$http", function (
 
   $scope.get();
 }]);
+"use strict";
 //# sourceMappingURL=bundle.js.map
