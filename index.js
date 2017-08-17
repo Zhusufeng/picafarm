@@ -31,16 +31,12 @@ app.use(express.static(public));
 
 // =========SQL database======== //
 var conn = massive.connectSync({
-  connectionString: process.env.DATABASE_URL
+  connectionString: process.env.DATABASE_URL // heroku
 });
 
-// //setting database connection.
+// setting database connection.
 app.set('db', conn);
 const db = app.get('db');
-
-//Custom Scripts =========================
-const user = require('./server/userCtrl.js');
-const searchFarm = require('./server/farmerCtrl.js');
 
 // If database table is not found create.
 db.table_check((err, response) => {
@@ -54,14 +50,51 @@ db.table_check((err, response) => {
 
 // =========SQL database======== //
 
+//Custom Scripts ===========================
+const user = require('./server/userCtrl.js');
+const searchFarm = require('./server/farmerCtrl.js');
+
+// Passport =================================
+const passport = require('./server/passport.js');
+
+//===POLICIES===========================
+const isAuthed = (req,res,next) => {
+  if (!req.isAuthenticated()) return res.status(401).send();
+  return next();
+};
+
+// =========Session configuration ========= //
+app.use(session({
+  secret: process.env.password,  // heroku
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    secure: false
+    // maxAge: (365 * 24 * 60 * 60 * 1000),
+    // expires: false
+  }
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+//=== Passport End Points ===================
+app.post('/login', passport.authenticate('local', {
+  successRedirect: '/user/login/good'
+}));
+
+app.get('/logout', (req, res, next) => {
+  req.logout();
+  return res.status(200).send('logged out');
+});
+
 // End Points ======================
 app.get('/search', searchFarm.searchFarm);
+
+// User End Points ======================
 app.post('/user/signup', user.makeUser);
-// app.get('/user/login', user.makeUser);
-
-// app.post('/api/quotes/save', quotes.saveQuotes);
-// app.get('/api/bibleQuotes', quotes.getBibleQuotes);
-
+app.get('/user/login/good', isAuthed, user.loginUser);
+app.get('/user/sessionCheck', user.sessionCheck);
 
 //===PORT====================================
 app.listen(port, () => {

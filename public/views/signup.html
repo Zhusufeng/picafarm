@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="flip">
+        <div class="card">
+          <div class="face back">
+            <div class="panel panel-default">
+              <form class="form-horizontal" ng-submit="createUser(user)">
+                <br>
+                <h1 class="text-center">Pic-A-Farm</h1>
+                <br>
+                <label>Basic Information</label>
+                <input class="form-control" placeholder="Username" ng-model="user.username"/>
+                <input class="form-control" placeholder="Email" ng-model="user.email"/>
+                <label>Private Information</label>
+                <input class="form-control" placeholder="Password" ng-model="user.password"/>
+                <button class="btn btn-primary btn-block" type="submit">SIGN UP</button>
+                <p class="text-center">
+                  <a ui-sref="login" class="fliper-btn">Already have an account?</a>
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /.container -->
