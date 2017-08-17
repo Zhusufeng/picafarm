@@ -101,7 +101,7 @@ angular.module('picafarm').service('mainService', ["$http", "$rootScope", functi
     console.info('Creating this user from createAccount-Service: ', user);
     return $http({
       method: 'POST',
-      url: '/register/account/create',
+      url: '/user/signup',
       data: user
     }).then(function (response) {
       self.checkSessions();
@@ -110,11 +110,9 @@ angular.module('picafarm').service('mainService', ["$http", "$rootScope", functi
 
   this.checkSessions = function () {
     console.log('Session Check is activated on Angular Serivce.');
-    return $http.get('/api/sessionCheck').then(function (response) {
+    return $http.get('/user/sessionCheck').then(function (response) {
       return response;
     });
   };
-
-  //endpoint: /user/signup
 }]);
 //# sourceMappingURL=bundle.js.map

@@ -1,11 +1,11 @@
 angular.module('picafarm').service('mainService', function ($http, $rootScope) {
   let self = this;
-  
+
   this.createAccount = (user) => {
     console.info('Creating this user from createAccount-Service: ', user);
     return $http({
       method: 'POST',
-      url: '/register/account/create',
+      url: '/user/signup',
       data: user
     })
       .then((response) => {
@@ -15,11 +15,9 @@ angular.module('picafarm').service('mainService', function ($http, $rootScope) {
 
   this.checkSessions = () => {
     console.log('Session Check is activated on Angular Serivce.');
-    return $http.get('/api/sessionCheck').then(function (response) {
+    return $http.get('/user/sessionCheck').then(function (response) {
       return response;
     });
   };
-
-  //endpoint: /user/signup
 
 });

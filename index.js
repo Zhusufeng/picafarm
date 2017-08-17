@@ -94,7 +94,7 @@ app.get('/search', searchFarm.searchFarm);
 // User End Points ======================
 app.post('/user/signup', user.makeUser);
 app.get('/user/login/good', isAuthed, user.loginUser);
-app.get('/api/sessionCheck', user.sessionCheck);
+app.get('/user/sessionCheck', user.sessionCheck);
 
 //===PORT====================================
 app.listen(port, () => {
