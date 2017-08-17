@@ -6,17 +6,14 @@
         <div class="card">
           <div class="face front">
             <div class="panel panel-default">
-              <form class="form-horizontal">
+              <form class="form-horizontal" ng-submit="loginUser(user)">
                 <br>
                 <h1 class="text-center">Pic-A-Farm</h1>
                 <br>
-                <input class="form-control" placeholder="Username" />
-                <input class="form-control" placeholder="Password" />
+                <input class="form-control" placeholder="Username" ng-model="user.username" />
+                <input class="form-control" placeholder="Password" ng-model="user.password" />
                 <p class="text-right"><a href="">Forgot Password</a></p>
-                <button class="btn btn-primary btn-block">LOG IN</button>
-                <hr>
-                <!-- <p class="blue">Sign in with</p>
-                <p><i class="fa fa-facebook-f fa-lg"></i><i class="fa fa-twitter fa-lg"></i></p> -->
+                <button class="btn btn-primary btn-block" type="submit">LOG IN</button>
                 <hr>
                 <p class="text-center">
                   <a ui-sref="signup" class="fliper-btn">Create new account?</a>

@@ -4,12 +4,26 @@ angular.module('picafarm').service('mainService', function ($http, $rootScope) {
   this.createAccount = (user) => {
     console.info('Creating this user from createAccount-Service: ', user);
     return $http({
-      method: 'POST',
-      url: '/user/signup',
-      data: user
-    })
+        method: 'POST',
+        url: '/user/signup',
+        data: user
+      })
       .then((response) => {
         self.checkSessions();
+      });
+  };
+
+  this.loginUser = (user) => {
+    console.log('logging in the user from login-mainService: ', user);
+    return $http({
+        method: 'POST',
+        url: '/login',
+        data: user
+      })
+      .then((response) => {
+        console.log('Reponse from login-mainService: ', response);
+        $rootScope.$emit('user', response.data);
+        return response;
       });
   };
 
@@ -19,5 +33,7 @@ angular.module('picafarm').service('mainService', function ($http, $rootScope) {
       return response;
     });
   };
+
+
 
 });

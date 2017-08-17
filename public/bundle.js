@@ -78,7 +78,7 @@ angular.module('picafarm').controller('mainCtrl', ["$scope", "$http", function (
 }]);
 'use strict';
 
-angular.module('picafarm').controller('userCtrl', ["$scope", "mainService", function ($scope, mainService) {
+angular.module('picafarm').controller('userCtrl', ["$scope", "$location", "mainService", function ($scope, $location, mainService) {
 
   $scope.createUser = function (user) {
     console.log('Here is the user: ', user);
@@ -90,7 +90,13 @@ angular.module('picafarm').controller('userCtrl', ["$scope", "mainService", func
     // Feedback if error ...
   };
 
-  //endpoint: /user/signup
+  $scope.loginUser = function (user) {
+    console.log('login user activaeted: ', user);
+    mainService.loginUser(user);
+
+    alert('Succesfully logged in');
+    $location.path('/');
+  };
 }]);
 'use strict';
 
@@ -105,6 +111,19 @@ angular.module('picafarm').service('mainService', ["$http", "$rootScope", functi
       data: user
     }).then(function (response) {
       self.checkSessions();
+    });
+  };
+
+  this.loginUser = function (user) {
+    console.log('logging in the user from login-mainService: ', user);
+    return $http({
+      method: 'POST',
+      url: '/login',
+      data: user
+    }).then(function (response) {
+      console.log('Reponse from login-mainService: ', response);
+      $rootScope.$emit('user', response.data);
+      return response;
     });
   };
 
