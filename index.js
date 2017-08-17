@@ -31,7 +31,7 @@ app.use(express.static(public));
 
 // =========SQL database======== //
 var conn = massive.connectSync({
-  connectionString: process.env.DATABASE_URL
+  connectionString: process.env.DATABASE_URL // heroku
 });
 
 // setting database connection.
@@ -50,12 +50,33 @@ db.table_check((err, response) => {
 
 // =========SQL database======== //
 
-//Custom Scripts =========================
+//Custom Scripts ===========================
 const user = require('./server/userCtrl.js');
 const searchFarm = require('./server/farmerCtrl.js');
 
-// Passport =========================
+// Passport =================================
 const passport = require('./server/passport.js');
+
+//===POLICIES===========================
+const isAuthed = (req,res,next) => {
+  if (!req.isAuthenticated()) return res.status(401).send();
+  return next();
+};
+
+// =========Session configuration ========= //
+app.use(session({
+  secret: process.env.password,  // heroku
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    secure: false
+    // maxAge: (365 * 24 * 60 * 60 * 1000),
+    // expires: false
+  }
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 //=== Passport End Points ===================
 app.post('/login', passport.authenticate('local', {
@@ -72,7 +93,7 @@ app.get('/search', searchFarm.searchFarm);
 
 // User End Points ======================
 app.post('/user/signup', user.makeUser);
-app.get('/user/login/good', user.loginUser);
+app.get('/user/login/good', isAuthed, user.loginUser);
 
 //===PORT====================================
 app.listen(port, () => {
