@@ -34,13 +34,9 @@ var conn = massive.connectSync({
   connectionString: process.env.DATABASE_URL
 });
 
-// //setting database connection.
+// setting database connection.
 app.set('db', conn);
 const db = app.get('db');
-
-//Custom Scripts =========================
-const user = require('./server/userCtrl.js');
-const searchFarm = require('./server/farmerCtrl.js');
 
 // If database table is not found create.
 db.table_check((err, response) => {
@@ -53,6 +49,13 @@ db.table_check((err, response) => {
 
 
 // =========SQL database======== //
+
+//Custom Scripts =========================
+const user = require('./server/userCtrl.js');
+const searchFarm = require('./server/farmerCtrl.js');
+
+// Passport =========================
+const passport = require('./server/passport.js');
 
 // End Points ======================
 app.get('/search', searchFarm.searchFarm);
