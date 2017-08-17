@@ -57,14 +57,22 @@ const searchFarm = require('./server/farmerCtrl.js');
 // Passport =========================
 const passport = require('./server/passport.js');
 
+//=== Passport End Points ===================
+app.post('/login', passport.authenticate('local', {
+  successRedirect: '/user/login/good'
+}));
+
+app.get('/logout', (req, res, next) => {
+  req.logout();
+  return res.status(200).send('logged out');
+});
+
 // End Points ======================
 app.get('/search', searchFarm.searchFarm);
+
+// User End Points ======================
 app.post('/user/signup', user.makeUser);
-// app.get('/user/login', user.makeUser);
-
-// app.post('/api/quotes/save', quotes.saveQuotes);
-// app.get('/api/bibleQuotes', quotes.getBibleQuotes);
-
+app.get('/user/login/good', user.loginUser);
 
 //===PORT====================================
 app.listen(port, () => {

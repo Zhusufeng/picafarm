@@ -29,19 +29,19 @@ passport.use(new LocalStrategy({
     // If no user is found, return false
     if (!user) return done(null, false,  { message: 'Incorrect username.' });
 
-    // If user is found, check if passwords match. if so, return user
+    // If user is found, check if passwords match. If matches, return user
     if (verifyPassword(password, user.password)) return done(null, user);
 
     console.log('Console Log from passport testing');
 
     delete user.password;
-    //if no match, return false
-    return done(null, false);
+    // If passwords do not match, return false
+    return done(null, false, { message: 'Incorrect password.' });
 
   });
 }));
 
-//puts the user on the session
+// Puts the user on the session
 passport.serializeUser(function(user, done) {
 	done(null, user);
 });
