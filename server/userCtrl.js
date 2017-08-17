@@ -17,10 +17,12 @@ exports.makeUser = (req, res) => {
   console.log('MakeUser from user Ctrl');
   const data = req.body;
 
+  console.log('Show me what we got: ', data);
+
   // Hash the password
   data.password = hashPassword(data.password);
 
-  db.user_create([data.username, data.password, data.grower, data.customer, data.email], (err, data) => {
+  db.user_create([data.username, data.password, false, false, data.email], (err, data) => {
     if (err) {
       console.log('Error occur creating makeUser');
       console.warn('Error', err);
@@ -33,8 +35,18 @@ exports.makeUser = (req, res) => {
 
 exports.loginUser = (req, res) => {
   console.log('LoginUser from user Ctrl');
-  const data = req.body;
+  if (!req.user) {
+    return res.status(401).send('current user not defined');
+  }
 
+  //remove password for security, do not send it back
+  const user = req.user;
+  console.info('Loggin user info from userCtrl from service', user);
+  //delete user.password;
+  console.log('Showing user password', user.password);
+
+  //return user object without passwordreturn
+  return res.status(200).json(user);
 };
 
 exports.sessionCheck = (req, res) => {

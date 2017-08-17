@@ -40,7 +40,7 @@ angular.module('picafarm').component('farmerSearch', {
 angular.module('picafarm').component('login', {
 
   templateUrl: 'views/login.html',
-  controller: 'mainCtrl'
+  controller: 'userCtrl'
 
 });
 'use strict';
@@ -61,6 +61,42 @@ angular.module('picafarm').component('signup', {
 });
 'use strict';
 
+angular.module('picafarm').service('mainService', ["$http", "$rootScope", function ($http, $rootScope) {
+  var self = this;
+
+  this.createAccount = function (user) {
+    console.info('Creating this user from createAccount-Service: ', user);
+    return $http({
+      method: 'POST',
+      url: '/user/signup',
+      data: user
+    }).then(function (response) {
+      self.checkSessions();
+    });
+  };
+
+  this.loginUser = function (user) {
+    console.log('logging in the user from login-mainService: ', user);
+    return $http({
+      method: 'POST',
+      url: '/login',
+      data: user
+    }).then(function (response) {
+      console.log('Reponse from login-mainService: ', response);
+      $rootScope.$emit('user', response.data);
+      return response;
+    });
+  };
+
+  this.checkSessions = function () {
+    console.log('Session Check is activated on Angular Serivce.');
+    return $http.get('/user/sessionCheck').then(function (response) {
+      return response;
+    });
+  };
+}]);
+'use strict';
+
 angular.module('picafarm').controller('mainCtrl', ["$scope", "$http", function ($scope, $http) {
 
   $scope.farmerArr = [];
@@ -78,7 +114,7 @@ angular.module('picafarm').controller('mainCtrl', ["$scope", "$http", function (
 }]);
 'use strict';
 
-angular.module('picafarm').controller('userCtrl', ["$scope", "mainService", function ($scope, mainService) {
+angular.module('picafarm').controller('userCtrl', ["$scope", "$location", "mainService", function ($scope, $location, mainService) {
 
   $scope.createUser = function (user) {
     console.log('Here is the user: ', user);
@@ -90,29 +126,12 @@ angular.module('picafarm').controller('userCtrl', ["$scope", "mainService", func
     // Feedback if error ...
   };
 
-  //endpoint: /user/signup
-}]);
-'use strict';
+  $scope.loginUser = function (user) {
+    console.log('login user activaeted: ', user);
+    mainService.loginUser(user);
 
-angular.module('picafarm').service('mainService', ["$http", "$rootScope", function ($http, $rootScope) {
-  var self = this;
-
-  this.createAccount = function (user) {
-    console.info('Creating this user from createAccount-Service: ', user);
-    return $http({
-      method: 'POST',
-      url: '/user/signup',
-      data: user
-    }).then(function (response) {
-      self.checkSessions();
-    });
-  };
-
-  this.checkSessions = function () {
-    console.log('Session Check is activated on Angular Serivce.');
-    return $http.get('/user/sessionCheck').then(function (response) {
-      return response;
-    });
+    alert('Succesfully logged in');
+    $location.path('/');
   };
 }]);
 //# sourceMappingURL=bundle.js.map

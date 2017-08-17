@@ -1,4 +1,4 @@
-angular.module('picafarm').controller('userCtrl', function ($scope, mainService) {
+angular.module('picafarm').controller('userCtrl', function ($scope, $location, mainService) {
 
   $scope.createUser = (user) => {
     console.log('Here is the user: ', user);
@@ -10,6 +10,11 @@ angular.module('picafarm').controller('userCtrl', function ($scope, mainService)
     // Feedback if error ...
   };
 
-  //endpoint: /user/signup
+  $scope.loginUser = (user) => {
+    console.log('login user activaeted: ', user);
+    mainService.loginUser(user);
 
+    alert('Succesfully logged in');
+    $location.path('/');
+  };
 });

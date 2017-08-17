@@ -31,9 +31,6 @@ passport.use(new LocalStrategy({
 
     // If user is found, check if passwords match. If matches, return user
     if (verifyPassword(password, user.password)) return done(null, user);
-
-    console.log('Console Log from passport testing');
-
     delete user.password;
     // If passwords do not match, return false
     return done(null, false, { message: 'Incorrect password.' });
