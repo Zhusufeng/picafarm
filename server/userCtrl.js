@@ -36,3 +36,8 @@ exports.loginUser = (req, res) => {
   const data = req.body;
 
 };
+
+exports.sessionCheck = (req, res) => {
+  console.log('Session check from server is activated');
+  return res.status(200).send(req.sessionID);
+};
