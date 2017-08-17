@@ -78,10 +78,43 @@ angular.module('picafarm').controller('mainCtrl', ["$scope", "$http", function (
 }]);
 'use strict';
 
-angular.module('picafarm').controller('userCtrl', ["$scope", function ($scope) {
+angular.module('picafarm').controller('userCtrl', ["$scope", "mainService", function ($scope, mainService) {
+
+  $scope.createUser = function (user) {
+    console.log('Here is the user: ', user);
+    mainService.createAccount(user);
+
+    // Feedback to user
+    alert('You created an account');
+
+    // Feedback if error ...
+  };
 
   //endpoint: /user/signup
-
 }]);
-"use strict";
+'use strict';
+
+angular.module('picafarm').service('mainService', ["$http", "$rootScope", function ($http, $rootScope) {
+  var self = this;
+
+  this.createAccount = function (user) {
+    console.info('Creating this user from createAccount-Service: ', user);
+    return $http({
+      method: 'POST',
+      url: '/register/account/create',
+      data: user
+    }).then(function (response) {
+      self.checkSessions();
+    });
+  };
+
+  this.checkSessions = function () {
+    console.log('Session Check is activated on Angular Serivce.');
+    return $http.get('/api/sessionCheck').then(function (response) {
+      return response;
+    });
+  };
+
+  //endpoint: /user/signup
+}]);
 //# sourceMappingURL=bundle.js.map
