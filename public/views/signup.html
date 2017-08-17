@@ -10,11 +10,11 @@
                 <h1 class="text-center">Pic-A-Farm</h1>
                 <br>
                 <label>Basic Information</label>
-                <input class="form-control" placeholder="Username" />
-                <input class="form-control" placeholder="Email" />
+                <input class="form-control" placeholder="Username" ng-model="user.username"/>
+                <input class="form-control" placeholder="Email" ng-model="user.email"/>
                 <label>Private Information</label>
-                <input class="form-control" placeholder="Password" />
-                <button class="btn btn-primary btn-block">SIGN UP</button>
+                <input class="form-control" placeholder="Password" ng-model="user.password"/>
+                <button class="btn btn-primary btn-block" ng-submit="createUser(user)">SIGN UP</button>
                 <p class="text-center">
                   <a ui-sref="login" class="fliper-btn">Already have an account?</a>
                 </p>
