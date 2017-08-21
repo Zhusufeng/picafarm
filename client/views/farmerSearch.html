@@ -7,7 +7,6 @@
 
   <div>
     <input class="search-input form-control" placeholder="Please search here." type="text" ng-model="searchbox">
-    <button type="submit" class="btn btn-default">Submit</button>
   </div>
 
   <div>
@@ -22,6 +21,7 @@
 
           <div ng-show="showFarm">
             <farmer-page farm="farm"></farmer-page>
+            <button class="btn btn-danger" ng-click="showFarm = !showFarm"> back </button>
           </div>
 
         </div>
