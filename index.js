@@ -8,6 +8,11 @@ const cors = require('cors');
 //For session.
 const session = require('express-session');
 
+var dotenv = require('dotenv');
+dotenv.load();
+
+console.log('Showing if the env file: ', process.env.DATABASE_URL);
+
 //Secrets.
 // const config = require('./config.js');
 
