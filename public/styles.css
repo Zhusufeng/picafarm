@@ -20,6 +20,16 @@
   padding: 10px;
 }
 
+.signup {
+  float: none;
+  margin: 0 auto;
+}
+
+.login {
+  float: none;
+  margin: 0 auto;
+}
+
 /* .profile {
 
 } */
