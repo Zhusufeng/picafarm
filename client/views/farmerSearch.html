@@ -14,15 +14,11 @@
       <div ng-repeat="farm in farmerArr | filter: searchbox" class="col-sm-4 col-md-4">
         <div class="thumbnail animated zoomIn">
           <img class="img-rounded imgbox" src="http://scontent.cdninstagram.com/t51.2885-15/s320x320/sh0.08/e35/18879056_2286478618244829_3371351715914711040_n.jpg">
-          <div ng-show="!showFarm"></div>
-            <div class="col-md-4 col-md-offset-4"><h4><a href ng-click="showFarm = !showFarm"> {{farm.title}} </a></h4></div>
-            <div class="col-md-4 col-md-offset-4"><h5> $ {{farm.price}} </h5></div>
-            <div class="col-md-4 col-md-offset-4">{{farm.curr_subscribers}} out of {{farm.max_subscribers}} </div>
-            <!-- <br> 
+          <div ng-show="!showFarm">
+            <h4><a href ng-click="showFarm = !showFarm"> {{farm.title}} </a></h4>
+            <h5> $ {{farm.price}} </h5>
             <br> 
-            {{farm.curr_subscribers}} out of {{farm.max_subscribers}} 
-            <br> -->
-            
+            {{farm.produce}} <br> {{farm.curr_subscribers}} out of {{farm.max_subscribers}} <br>
           </div>
 
           <div ng-show="showFarm">
