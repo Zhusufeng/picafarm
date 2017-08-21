@@ -12,11 +12,8 @@ const session = require('express-session');
 var dotenv = require('dotenv');
 dotenv.load();
 
-console.log('Showing if the env file: ', process.env.DATABASE_URL);
-
-//Secrets.
-const config = require('./config.js');
-
+//Secrets -- Testing file for local.
+// const config = require('./config.js');
 
 //Sql Database connection tool --- later for db
 const massive = require('massive'); //Postgres SQL tool
@@ -35,8 +32,8 @@ app.use(express.static(public));
 
 // =========SQL database======== //
 var conn = massive.connectSync({
-  connectionString: config.connectionString // heroku
-  // connectionString: process.env.DATABASE_URL // heroku
+  // connectionString: config.connectionString // heroku
+  connectionString: process.env.DATABASE_URL // heroku
 });
 
 // setting database connection.
