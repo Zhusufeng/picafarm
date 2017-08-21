@@ -40,9 +40,93 @@ Once the project moves into development, the press release can be used as a touc
   > Easy way for home growers to make some extra money by selling the extra veggies they get after harvest
 
 ## How to Get Started ##
-  > do npm install!
+# Picafarm
+Join an online community of backyard gardens. Be a consumer or be a farmer.
 
-  > Will be updated.
+
+# Team
+- **Scrum Master:** Lisa Gee
+- **Product Owner:** Kevin Su
+- **Development Team Members:** Kevin Kim, Anjali Sharma
+
+
+# Technology Used
+- Server Side
+  - Node JS - javascript runtime
+  - Express - the server framework
+- Middleware
+  - Gulp
+  - Passport
+  - BCrypt
+  - bodyparser
+  - path
+- Client Side
+  - Angular JS - front end framework
+  - Bootstrap - HTML, CSS, and JS Framework
+- Database
+  - PostgreSQL - relational database
+- Deployment
+  - Heroku - PaaS for deployment
+  - Heroku Postgres (Hobby Dev Tier: Free)
+# Requirements
+- **Angular** 1.6.5
+- **Express** 4.15.4
+- **Node** 8.x
+- **PostgreSQL** 9.6.x
+# Installation 
+To Install the Dependencies, do this from inside the downloaded directory
+
+```javascript
+npm install
+```
+To run the program locally 
+
+```javascript
+npm start
+```
+Testing the application locally you would want to install [Postgres](http://postgresapp.com/) from their website.  If you are deploying to Heroku, you can use Heroku Postgres and deploy heroku each time you test the application. For Mac users, one tool to view your tables and collections is **Postico**. For PC users, you can use **PGAdmin 3** and utilize the **pSQL console**. 
+
+
+Here is a link for more information: [heroku postgres setup](http://agileforce.co.uk/heroku-workshop/heroku-postgres/pgadmin.html)
+
+```javascript
+//show tables
+\dt
+//show data in table
+SELECT * FROM [tablename];
+```
+In our config file, we have our session password and the connection string is replaced by the environment variable from Heroku Postgres. The config file would look like something below:
+
+```javascript
+module.exports = {
+    connectionString: 'postgres://URLHere',
+    password: 'SECRETHERE'
+};
+```
+
+
+To push to heroku, you want to add the remote key
+
+```javascript
+git remote -v
+git add remote upstream "git url" 
+```
+ after each change you want to do the following
+
+```javascript
+git add .
+git commit -m "adding new things"
+git push heroku master
+```
+# Api Endpoints
+**/ **- brings up farmer search component
+**/login -**  this is the login component page
+**/user/login/good **- this is for when login goes through, the component doesn't change
+**/logout** -* *was not completed. *
+**/search -** for searching the list of farms, our main view component that shows up when the website loads
+**/user/signup -** for when users sign up
+**/user/sessionCheck **- **this is for passport and bcrypt, not fully ultilized. *
+
 
 ## Customer Quote ##
   > User: I love getting veggies from local growers and supporting my neighbors! 
@@ -52,3 +136,5 @@ Once the project moves into development, the press release can be used as a touc
 ## Closing and Call to Action ##
   > USE OUR PLATFORM NOW!
   > GET YO VEGGIES ON
+
+
