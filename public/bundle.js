@@ -16,45 +16,6 @@ angular.module('picafarm', ['ui.router']).config(["$stateProvider", "$urlRouterP
 }]);
 'use strict';
 
-angular.module('picafarm').controller('mainCtrl', ["$scope", "$http", function ($scope, $http) {
-
-  $scope.farmerArr = [];
-
-  $scope.get = function () {
-    $http.get("/search").then(function (response) {
-      console.log(response.data);
-      $scope.farmerArr = response.data;
-    }).catch(function (response) {
-      console.log(response);
-    });
-  };
-
-  $scope.get();
-}]);
-'use strict';
-
-angular.module('picafarm').controller('userCtrl', ["$scope", "$location", "mainService", function ($scope, $location, mainService) {
-
-  $scope.createUser = function (user) {
-    console.log('Here is the user: ', user);
-    mainService.createAccount(user);
-
-    // Feedback to user
-    alert('You created an account');
-
-    // Feedback if error ...
-  };
-
-  $scope.loginUser = function (user) {
-    console.log('login user activaeted: ', user);
-    mainService.loginUser(user);
-
-    alert('Succesfully logged in');
-    $location.path('/');
-  };
-}]);
-'use strict';
-
 angular.module('picafarm').component('farmerPage', {
 
   bindings: {
@@ -132,6 +93,45 @@ angular.module('picafarm').service('mainService', ["$http", "$rootScope", functi
     return $http.get('/user/sessionCheck').then(function (response) {
       return response;
     });
+  };
+}]);
+'use strict';
+
+angular.module('picafarm').controller('mainCtrl', ["$scope", "$http", function ($scope, $http) {
+
+  $scope.farmerArr = [];
+
+  $scope.get = function () {
+    $http.get("/search").then(function (response) {
+      console.log(response.data);
+      $scope.farmerArr = response.data;
+    }).catch(function (response) {
+      console.log(response);
+    });
+  };
+
+  $scope.get();
+}]);
+'use strict';
+
+angular.module('picafarm').controller('userCtrl', ["$scope", "$location", "mainService", function ($scope, $location, mainService) {
+
+  $scope.createUser = function (user) {
+    console.log('Here is the user: ', user);
+    mainService.createAccount(user);
+
+    // Feedback to user
+    alert('You created an account');
+
+    // Feedback if error ...
+  };
+
+  $scope.loginUser = function (user) {
+    console.log('login user activaeted: ', user);
+    mainService.loginUser(user);
+
+    alert('Succesfully logged in');
+    $location.path('/');
   };
 }]);
 //# sourceMappingURL=bundle.js.map
