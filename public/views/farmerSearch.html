@@ -1,14 +1,19 @@
-<div class="container farmmain" >
+<div class="container farmmain">
+
   <div class="jumbotron">
     <h1>PicAFarm</h1>
     <p>the best place in the world to pick community farms.</p>
   </div>
+
   <div>
-    <div><input type="text" ng-model="searchbox"></div>
+    <input class="search-input" type="text" ng-model="searchbox">
+  </div>
+
+  <div>
     <div class="row">
       <div ng-repeat="farm in farmerArr | filter: searchbox" class="col-sm-4 col-md-4">
-        <div class="thumbnail">
-          <img src="http://scontent.cdninstagram.com/t51.2885-15/s320x320/sh0.08/e35/18879056_2286478618244829_3371351715914711040_n.jpg">
+        <div class="thumbnail animated zoomIn">
+          <img class="img-rounded" src="http://scontent.cdninstagram.com/t51.2885-15/s320x320/sh0.08/e35/18879056_2286478618244829_3371351715914711040_n.jpg">
           <div ng-show="!showFarm">
             <h4><a href ng-click="showFarm = !showFarm"> {{farm.title}} </a></h4>
             <h5> $ {{farm.price}} </h5><br> {{farm.produce}} <br> {{farm.curr_subscribers}} out of {{farm.max_subscribers}} <br>
@@ -23,4 +28,6 @@
       </div>
     </div>
   </div>
+
+
 </div>
