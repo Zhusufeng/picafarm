@@ -1,19 +1,32 @@
-/* .farms {
-  
-} */
-
 .farmmain{
   margin-top: 70px;
 }
 
-.hide {
-  display: none;
+.aboutus{
+  margin-top: 70px;
 }
 
-.show {
-  display: inline;
+#search-input {
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 35px;
 }
 
-/* .profile {
+.signup {
+  margin-top: 70px;
+}
 
-} */
+.login {
+  margin-top: 70px;
+}
+
+.imgbox {
+  height: 300px;
+  width: 300px;
+}
+
+.imgbox-aboutus {
+  height: 200px;
+  width: 200px;
+}
+

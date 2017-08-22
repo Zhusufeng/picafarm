@@ -12,10 +12,17 @@ angular.module('picafarm', ['ui.router'])
       .state('signup', {
         url: '/signup',
         template: '<signup></signup>'
-  });
+      })
+      .state('aboutus', {
+        url: '/aboutus',
+        templateUrl: '/views/aboutus.html'
+      })
+      .state('addfarm', {
+        url: '/addfarm',
+        templateUrl: '/views/addfarm.html'
+      });
 
     $urlRouterProvider
       .otherwise('/');
 
   });
-

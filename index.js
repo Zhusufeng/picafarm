@@ -8,10 +8,11 @@ const cors = require('cors');
 //For session.
 const session = require('express-session');
 
-//Secrets.
-// const config = require('./config.js');
+//For local variable loading.
+var dotenv = require('dotenv');
+dotenv.load();
 
-//secrete session code file. --- later for individual accounts save.
+//Secrets -- Testing file for local.
 // const config = require('./config.js');
 
 //Sql Database connection tool --- later for db
@@ -31,6 +32,7 @@ app.use(express.static(public));
 
 // =========SQL database======== //
 var conn = massive.connectSync({
+  // connectionString: config.connectionString // heroku
   connectionString: process.env.DATABASE_URL // heroku
 });
 
