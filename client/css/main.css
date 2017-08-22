@@ -2,6 +2,10 @@
   margin-top: 70px;
 }
 
+.aboutus{
+  margin-top: 70px;
+}
+
 #search-input {
   width: 50%;
   margin: 0 auto;
@@ -19,5 +23,10 @@
 .imgbox {
   height: 300px;
   width: 300px;
+}
+
+.imgbox-aboutus {
+  height: 250px;
+  width: 250px;
 }
 
