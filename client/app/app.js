@@ -15,7 +15,7 @@ angular.module('picafarm', ['ui.router'])
       })
       .state('aboutus', {
         url: '/aboutus',
-        template: '<h1>it\'s about pickachu</h1>'
+        templateUrl: '/views/aboutus.html'
       })
       .state('addfarm', {
         url: '/addfarm',
