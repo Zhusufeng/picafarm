@@ -15,7 +15,7 @@ angular.module('picafarm', ['ui.router']).config(["$stateProvider", "$urlRouterP
     templateUrl: '/views/aboutus.html'
   }).state('addfarm', {
     url: '/addfarm',
-    template: '<h1>it\'s about adding farm.</h1>'
+    templateUrl: '/views/addfarm.html'
   });
 
   $urlRouterProvider.otherwise('/');

@@ -19,7 +19,7 @@ angular.module('picafarm', ['ui.router'])
       })
       .state('addfarm', {
         url: '/addfarm',
-        template: '<h1>it\'s about adding farm.</h1>'
+        templateUrl: '/views/addfarm.html'
       });
 
     $urlRouterProvider
